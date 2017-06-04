@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template
-from pymongo import MongoClient
+# from pymongo import MongoClient
 import json
 
 app = Flask(__name__)
@@ -20,7 +20,7 @@ def dash():
    """
    A Flask view to serve the main dashboard page.
    """
-   return render_template("index.html")
+   return render_template("dash.html")
 
 
 @app.route("/FOHealth/projects")
@@ -53,9 +53,3 @@ def health_projects():
 if __name__ == "__main__":
    app.run(debug=True)
 
-@app.route('/dash')
-def dash():
-   return render_template('dash.html')
-
-if __name__ == '__main__':
-   app.run(debug=False)
