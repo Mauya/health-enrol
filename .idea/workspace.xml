@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2994563-a1fc-4bf7-b570-0c0228708b9b" name="Default" comment="uploaded third part files">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/css/keen-dashboard.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/js/bootstraap.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="e2994563-a1fc-4bf7-b570-0c0228708b9b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/lib/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/static/lib/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/lib/css/dc.css" afterPath="$PROJECT_DIR$/static/lib/css/dc.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/lib/js/crossfilter.js" afterPath="$PROJECT_DIR$/static/lib/js/crossfilter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/lib/js/d3.js" afterPath="$PROJECT_DIR$/static/lib/js/d3.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/lib/js/dc.js" afterPath="$PROJECT_DIR$/static/lib/js/dc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/lib/js/jquery.min.js" afterPath="$PROJECT_DIR$/static/lib/js/jquery.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/lib/js/keen.min.js" afterPath="$PROJECT_DIR$/static/lib/js/keen.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/lib/js/queue.js" afterPath="$PROJECT_DIR$/static/lib/js/queue.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,12 +32,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dc.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dc.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/lib/js/dc.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="127">
               <caret line="3127" column="13" lean-forward="true" selection-start-line="3127" selection-start-column="13" selection-end-line="3127" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.min.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/lib/js/bootstrap.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="5" column="1562" lean-forward="false" selection-start-line="5" selection-start-column="1562" selection-end-line="5" selection-end-column="1562" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -530,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496603824802</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="uploaded third part files">
+      <created>1496693909928</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1496693909928</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -814,6 +822,16 @@
         <state relative-caret-position="127">
           <caret line="3127" column="13" lean-forward="true" selection-start-line="3127" selection-start-column="13" selection-end-line="3127" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/lib/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="5" column="1562" lean-forward="false" selection-start-line="5" selection-start-column="1562" selection-end-line="5" selection-end-column="1562" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
