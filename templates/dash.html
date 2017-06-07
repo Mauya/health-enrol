@@ -1,5 +1,192 @@
 {% extends "index.html" %}
 {% block content %}
- <h2>Analytics Dashboard</h2>
- <p>This is the main dashboard</p>
+  <div  id="outer" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="chart-stage">
+                <div class="col-sm-3" id="menu-select-academic_year">Year<br></div>
+                <div class="col-sm-3" id="menu-select-course">Course<br></div>
+            </div>
+
+            <div class="chart-wrapper" data-step="1">
+                <div id = "num-display-enrolments" class="col-sm-3">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Enrolment Count
+                        </div>
+                        <div class="chart-stage">
+                            <div id="total-enrol" class="big-numbers"></div>
+                        </div>
+                    </div>
+                </div><!-- #num-display-enrolment -->
+
+                <div id = "num-display-international-student" class="col-sm-3">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            International Students
+                        </div>
+                        <div class="chart-stage">
+                            <div id="total-international" class="big-numbers"></div>
+                        </div>
+                    </div>
+                </div><!-- #num-display-international-student -->
+
+                <div id="num-display-home-student" class="col-sm-3">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Home/Eu
+                        </div>
+                        <div class="chart-stage">
+                            <div id="total-home/eu" class="big-numbers"></div>
+                        </div>
+                    </div>
+                </div><!-- #num-display-home/eu -->
+
+		<div id="num-display-total-withdrawals" class="col-sm-3">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Withdrawals
+                        </div>
+                        <div class="chart-stage">
+                            <div id="total-withdrawals" class="big-numbers"></div>
+                        </div>
+                    </div>
+                </div><!-- #num-display-withdrawals -->
+
+	     </div>
+	</div>
+   </div> # first row ends
+
+
+   <div class=row>
+      <div class="col-sm-12">
+        <div class="row">
+          <!-- Time Chart -->
+          <div id=annual-enrol class="col-sm-8">
+            <div class="chart-wrapper" data-step="2">
+              <div class="chart-title">
+                Faculty Of Health Enrolment Trends
+              </div>
+              <div class="chart-stage">
+                <div id="time-chart"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Time Chart -->
+
+     	  <!-- course-stage Pie -->
+          <div class="col-sm-3">
+            <div class="chart-wrapper" data-step="3">
+              <div class="chart-title">
+                Enrolment By course stage
+              </div>
+              <div class="chart-stage">
+                <div id="course-stage-chart"></div>
+              </div>
+            </div>
+          </div>
+          <!-- course-stage Pie -->
+   	</div>
+     </div>
+
+     <div class="row">
+          <div class="col-sm-12">
+          <!-- level of Study -->
+          <div class="col-sm-4">
+            <div class="chart-wrapper" data-step="4">
+              <div class="chart-title">
+               Level Group
+              </div>
+              <div class="chart-stage">
+                <div id="resource-type-row-chart"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Level of Study -->
+
+          <!-- Mode of study -->
+          <div class="col-sm-4">
+            <div class="chart-wrapper" data-step="5">
+              <div class="chart-title">
+                Mode
+              </div>
+              <div class="chart-stage">
+                <div id="funding-chart"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Mode of study -->
+        </div>
+      </div>
+
+	<!-- Reason-for-leaving-->
+          <div class="col-sm-4">
+            <div class="chart-wrapper" data-step="5">
+              <div class="chart-title">
+                Reason for leaving
+              </div>
+              <div class="chart-stage">
+                <div id="-chart"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Reason-for-Leaving -->
+        </div>
+      </div>
+
+   <!--Faculty enrolment Profile -->
+
+
+	<div id="gender" class="col-sm-3">
+            <div class="chart-wrapper" data-step="6">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        Enrolment By Gender
+                    </div>
+                    <div class="chart-stage">
+                        <div id="Gender-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- #gender -->
+        <div id="Age" class="col-sm-3">
+            <div class="chart-wrapper" data-step="7">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        Enrolment By Age
+                    </div>
+                    <div class="chart-stage">
+                        <div id="Age-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- #Age -->
+        <div id="White-BME" class="col-sm-3">
+            <div class="chart-wrapper" data-step="8">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        Enrolment by White/BME
+                    </div>
+                    <div class="chart-stage">
+                        <div id="White/BME-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- #white/bme -->
+        <div id="disability" class="col-sm-3">
+            <div class="chart-wrapper" data-step="10" data-intro=" The description that you want" data-position="right">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                       Enrolment by Disability Status
+                    </div>
+                    <div class="chart-stage">
+                        <div id="Disability-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- disability -->
+      </div>
+
 {% endblock %}
+
