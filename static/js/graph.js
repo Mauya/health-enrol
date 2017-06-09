@@ -6,7 +6,7 @@ queue()
 .await(makeGraphs);
 function makeGraphs(error, projectsJson) {
     var FOHealthProjects = projectsJson;
-    var dateFormat = d3.time.format("%Y/%Y");
+    var dateFormat = d3.time.format("%Y");
     FOHealthProjects.forEach(function (d) {
         d.Academic_Year = dateFormat.parse(d.Academic_Year);
         d.Academic_Year.setDate(1);
@@ -39,8 +39,10 @@ function makeGraphs(error, projectsJson) {
     var TotalEnrollmentDim = ndx.dimension(function (d) {
         return d.starters;
     });
-
-    var genderDim = ndx.dimension(function (d) {
+    var FeesDim = ndx.dimension(function (d) {
+        return d.Fees;
+    });
+    var GenderDim = ndx.dimension(function (d) {
         return d.Gender;
     });
     var AgeDim = ndx.dimension(function (d) {
