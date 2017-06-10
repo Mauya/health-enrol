@@ -8,7 +8,7 @@ queue()
 function makeGraphs(error, projectsJson) {
     var FOHealthProjects = projectsJson;
     var dateFormat = d3.time.format("%Y");
-    FOHealthProjects.forEach(function(d) {
+    FOHealthProjects.forEach(function (d) {
     d["Academic_Year"] = dateFormat.parse(d["Academic_Year"]);
     d["Academic_Year"].setDate(1);
     d["total_Starters"] = +d["total_Starters"];
@@ -120,20 +120,6 @@ function makeGraphs(error, projectsJson) {
 
 
 // Apply DC and D3
-
-    // Formats for titles
-    var numberFormat = d3.format(",");
-    var numberFormat2 = d3.format(".3n");
-
-    // Records counter
-    /* This counter shows the amount of records selected after applying a filter. */
-    dc.dataCount('.dc-data-count')
-        .dimension(ndx)
-        .group(all)
-        .html({
-            some: '<strong>%filter-count</strong> selected out of <strong>%total-count</strong> records',
-            all: 'All records selected.'
-        });
 
     // Charts variables: chart binding to HTML elements by CSS ID selectors
 
