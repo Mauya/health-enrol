@@ -67,3 +67,17 @@ h3 {
    color: #999;
    text-decoration: none;
 }
+
+/* Select Menu*/
+.dc-select-menu {
+   background-color: #000000;
+   width: 60%;
+   border: none;
+   position: relative;
+   height: 31px;
+   color: #f5deb3;
+   vertical-align: middle;
+   text-align: center;
+   padding-top: 4px;
+   padding-bottom: 0px;
+}

@@ -13,7 +13,6 @@ function makeGraphs(error, projectsJson) {
         d.total_Starters = +d.total_Starters;
     });
 
-
     // Crossfilter instance
     var ndx = crossfilter(FOHealthProjects);
 
@@ -76,12 +75,12 @@ function makeGraphs(error, projectsJson) {
 
     var numProjectsByGender = GenderDim.group();
     var numProjectsByAge = AgeDim.group();
+    var numProjectsByFees = FeesDim();
     var numProjectsByWhiteBME = WhiteBMEDim.group();
     var numProjectsByEthnicityGroup = EthnicityGroupDim.group();
     var numProjectsByDisabilityDescription = DisabilityDescriptionDim.group();
     var numProjectsByDisability = DisabilityDim.group();
     var numProjectsByWithdrawals = WithdrawalsDim.group();
-    var numProjectsByStudents = studentsDim.group();
 
 //all
 
@@ -103,8 +102,11 @@ function makeGraphs(error, projectsJson) {
     var TotalEnrollmentByAge = ndx.groupAll().reduceSum(function (d) {
         return d.Age;
     });
-    Var
-    TotalEnrollmentByWhiteBME = ndx.groupAll().reduceSum(function (d) {
+    var TotalEnrollmentByFees = ndx.groupall().reducesum(function (d) {
+        return d.Fees;
+    });
+
+    var TotalEnrollmentByWhiteBME = ndx.groupAll().reduceSum(function (d) {
         return d.White_BME;
     });
     var TotalEnrollmentByEthnicity = ndx.groupAll().reduceSum(function (d) {
@@ -139,5 +141,18 @@ function makeGraphs(error, projectsJson) {
     // Displayed in dash.html
     var selectFieldYear = dc.selectMenu('#menu-select-academic_year');
     var selectFieldCourse = dc.selectMenu('#menu-select-course');
+
+    //filter
+    /*These selectors filter data by:
+    * - Academic Year
+    * - Course
+     */
+    selectFieldYear
+        .dimension(dateDim)
+        .group(numProjectsByDate);
+
+    selectFieldCourse
+        .dimension(CourseNameDim)
+        .group(numProjectsByCourseName);
 
 }
