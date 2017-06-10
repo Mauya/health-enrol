@@ -8,60 +8,59 @@ queue()
 function makeGraphs(error, projectsJson) {
     var FOHealthProjects = projectsJson;
     var dateFormat = d3.time.format("%Y");
-    FOHealthProjects.forEach(function (d) {
-        d."Academic_Year" = dateFormat.parse(d."Academic_Year");
-        d."Academic_Year".setDate(1);
-        d."total_Starters" = +d."total_Starters"
-    });
-
+    FOHealthProjects.forEach(function(d) {
+    d["Academic_Year"] = dateFormat.parse(d["Academic_Year"]);
+    d["Academic_Year"].setDate(1);
+    d["total_Starters"] = +d["total_Starters"];
+});
     // Crossfilter instance
     var ndx = crossfilter(FOHealthProjects);
 
     // Dimensions
     var dateDim = ndx.dimension(function (d) {
-        return d.Academic_Year;
+        return d["Academic_Year"];
     });
     var CourseNameDim = ndx.dimension(function (d) {
-        return d.Course;
+        return d["Course"];
     });
     var CourseStageDim = ndx.dimension(function (d) {
-        return d.Course_Stage;
+        return d["Course_Stage"];
     });
     var ModeGroupDim = ndx.dimension(function (d) {
-        return d.Mode_Group;
+        return d["Mode_Group"];
     });
     var LevelGroupDim = ndx.dimension(function (d) {
-        return d.Level_Group;
+        return d["Level_Group"];
     });
     var ReasonForLeavingDim = ndx.dimension(function (d) {
-        return d.Reason_For_Leaving;
+        return d["Reason_For_Leaving"];
     });
     var TotalEnrollmentDim = ndx.dimension(function (d) {
-        return d.starters;
+        return d["starters"];
     });
     var FeesDim = ndx.dimension(function (d) {
-        return d.Fees;
+        return d["Fees"];
     });
     var GenderDim = ndx.dimension(function (d) {
-        return d.Gender;
+        return d["Gender"];
     });
     var AgeDim = ndx.dimension(function (d) {
-        return d.Age;
+        return d["Age"];
     });
     var WhiteBMEDim = ndx.dimension(function (d) {
-        return d.White_BME;
+        return d["White_BME"];
     });
     var EthnicityGroupDim = ndx.dimension(function (d) {
-        return d.Ethnicity_Group;
+        return d["Ethnicity_Group"];
     });
     var DisabilityDescriptionDim = ndx.dimension(function (d) {
-        return d.Disability_Description;
+        return d["Disability_Description"];
     });
     var DisabilityDim = ndx.dimension(function (d) {
-        return d.Disability_YN;
+        return d["Disability_YN"];
     });
     var WithdrawalsDim = ndx.dimension(function (d) {
-        return d.Withdrawals;
+        return d["Withdrawals"];
     });
 
 
@@ -89,35 +88,34 @@ function makeGraphs(error, projectsJson) {
 
 //reduce
     var TotalEnrollmentByCourse = CourseNameDim.group().reduceSum(function (d) {
-        return d.starters;
+        return d["starters"];
     });
     var TotalEnrollmentByAcademicYear = dateDim.group().reduceSum(function (d) {
-        return d.starters;
+        return d["starters"];
     });
     var totalWithdrawals = ndx.groupAll().reduceSum(function (d) {
-        return d.Withdrawals;
+        return d["Withdrawals"];
     });
     var TotalEnrollmentByGender = ndx.groupAll().reduceSum(function (d) {
-        return d.Gender;
+        return d["Gender"];
     });
     var TotalEnrollmentByAge = ndx.groupAll().reduceSum(function (d) {
-        return d.Age;
+        return d["Age"];
     });
     var TotalEnrollmentByFees = ndx.groupall().reducesum(function (d) {
-        return d.Fees;
+        return d["Fees"];
     });
-
     var TotalEnrollmentByWhiteBME = ndx.groupAll().reduceSum(function (d) {
-        return d.White_BME;
+        return d["White_BME"];
     });
     var TotalEnrollmentByEthnicity = ndx.groupAll().reduceSum(function (d) {
-        return d.Ethnicity_Group;
+        return d["Ethnicity_Group"];
     });
     var TotalEnrollmentByDisabilityDescription = ndx.groupAll().reduceSum(function (d) {
-        return d.Disability_Description;
+        return d["Disability_Description"];
     });
     var TotalEnrollmentByDisability = ndx.groupAll().reduceSum(function (d) {
-        return d.Disability_YN;
+        return d["Disability_YN"];
     });
 
 
@@ -156,4 +154,5 @@ function makeGraphs(error, projectsJson) {
         .dimension(CourseNameDim)
         .group(numProjectsByCourseName);
 
+    dc.renderAll();
 }
