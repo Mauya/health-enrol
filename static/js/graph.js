@@ -8,9 +8,9 @@ function makeGraphs(error, projectsJson) {
     var FOHealthProjects = projectsJson;
     var dateFormat = d3.time.format("%Y");
     FOHealthProjects.forEach(function (d) {
-        d.Academic_Year = dateFormat.parse(d.Academic_Year);
-        d.Academic_Year.setDate(1);
-        d.total_Starters = +d.total_Starters;
+        d."Academic_Year" = dateFormat.parse(d."Academic_Year");
+        d."Academic_Year".setDate(1);
+        d."total_Starters" = +d."total_Starters";
     });
 
     // Crossfilter instance
