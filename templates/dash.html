@@ -1,62 +1,84 @@
 {% extends "index.html" %}
 {% block content %}
   <div  id="outer" class="container-fluid">
+  <!--Menu select-->
     <div class="row">
         <div class="col-sm-12">
-            <div class="chart-stage">
-                <div class="col-sm-3" id="menu-select-academic_year">Year<br></div>
-                <div class="col-sm-3" id="menu-select-course">Course<br></div>
+            <div class="chart-wrapper">
+                <div class="col-sm-6">
+                    <div class="chart-title">
+                        Year
+                    </div>
+                    <div class="chart-stage">
+                        <div id="menu-select-academic_year"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-wrapper">
+                <div class="col-sm-6">
+                    <div class="chart-title">
+                        Course
+                    </div>
+                    <div class="chart-stage">
+                        <div id="menu-select-course"></div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </div> #first row end
     <div class="row">
         <div class ="col-sm-12">
-            <div class="chart-wrapper" data-step="1">
-                <div id = "num-display-enrolments" class="col-sm-3">
-                    <div class="chart-wrapper">
-                        <div class="chart-title">
-                            Enrolment Count
-                        </div>
-                        <div class="chart-stage">
-                            <div id="total-enrol-nd" class="big-numbers"></div>
-                        </div>
+            <!-- Metric 1 -->
+            <div class="col-sm-3">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        Enrolment Count
                     </div>
-                </div><!-- #num-display-enrolment -->
+                    <div class="chart-stage">
+                        <div id="total-enrollment-nd"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Metric 1 -->
+            <!-- Metric 2 -->
+            <div class="col-sm-3">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        International Students
+                    </div>
+                    <div class="chart-stage">
+                        <div id="total-international-nd"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Metric 2 -->
+            <!-- Metric 3 -->
+            <div class="col-sm-3">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        Home/EU Students
+                    </div>
+                 <div class="chart-stage">
+                    <div id="total-home/eu-nd"></div>
+                 </div>
+                </div>
+            </div>
+            <!-- Metric 3 -->
+            <!-- Metric 4 -->
+            <div class="col-sm-3">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        Withdrawals
+                    </div>
+                 <div class="chart-stage">
+                    <div id="total-withdrawals-nd"></div>
+                 </div>
+                </div>
+            </div>
+            <!-- Metric 4 -->
+        </div>
+    </div> #end of row
 
-                <div id = "num-display-international-student" class="col-sm-3">
-                    <div class="chart-wrapper">
-                        <div class="chart-title">
-                            International Students
-                        </div>
-                        <div class="chart-stage">
-                            <div id="total-international" class="big-numbers"></div>
-                        </div>
-                    </div>
-                </div><!-- #num-display-international-student -->
-
-                <div id="num-display-home-student" class="col-sm-3">
-                    <div class="chart-wrapper">
-                        <div class="chart-title">
-                            Home/Eu
-                        </div>
-                        <div class="chart-stage">
-                            <div id="total-home/eu" class="big-numbers"></div>
-                        </div>
-                    </div>
-                </div><!-- #num-display-home/eu -->
-
-		<div id="num-display-total-withdrawals" class="col-sm-3">
-                    <div class="chart-wrapper">
-                        <div class="chart-title">
-                            Withdrawals
-                        </div>
-                        <div class="chart-stage">
-                            <div id="total-withdrawals" class="big-numbers"></div>
-                        </div>
-                    </div>
-                </div><!-- #num-display-withdrawals -->
-	        </div>
-	    </div># row ends
        <div class=row>
           <div class="col-sm-12">
             <div class="row">
