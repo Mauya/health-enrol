@@ -6,12 +6,14 @@ queue()
     .await(makeGraphs);
 
 function makeGraphs(error, projectsJson) {
+
     var FOHealthProjects = projectsJson;
+
     var dateFormat = d3.time.format("%Y");
     FOHealthProjects.forEach(function (d) {
     d["Academic_Year"] = dateFormat.parse(d["Academic_Year"]);
     d["Academic_Year"].setDate(1);
-    d["total_Starters"] = +d["total_Starters"];
+    d["Starters"] = +d["Starters"];
 });
     // Crossfilter instance
     var ndx = crossfilter(FOHealthProjects);
@@ -73,7 +75,7 @@ function makeGraphs(error, projectsJson) {
     var numProjectsByReasonForLeaving = ReasonForLeavingDim.group();
     var TotalEnrollment = TotalEnrollmentDim.group();
 
-    var numProjectsByGender = GenderDim.group();
+    var numProjectsByGender = GenderDim.group();+
     var numProjectsByAge = AgeDim.group();
     var numProjectsByFees = FeesDim();
     var numProjectsByWhiteBME = WhiteBMEDim.group();
@@ -126,6 +128,7 @@ function makeGraphs(error, projectsJson) {
     // Displayed in dash.html
     var selectFieldYear = dc.selectMenu('#menu-select-academic_year');
     var selectFieldCourse = dc.selectMenu('#menu-select-course');
+    var enrollmentCount = dc.numberDisplay(#total-enrol)
 
     //filter
     /*These selectors filter data by:
@@ -139,6 +142,14 @@ function makeGraphs(error, projectsJson) {
     selectFieldCourse
         .dimension(CourseNameDim)
         .group(numProjectsByCourseName);
+
+    enrollmentCount
+        .formatNumber(d3.format(","))
+        .valueAssessor(function (d) {return d;})
+        .group(all);
+
+
+
 
     dc.renderAll();
 }
