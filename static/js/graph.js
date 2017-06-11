@@ -156,10 +156,16 @@ function makeGraphs(error, projectsJson) {
 
     totalEnrollmentND
         .formatNumber(d3.format("d"))
+        .valueAccessor(function(d){
+            return d;
+        })
         .group(totalEnrollment);
 
     totalWithdrawalsND
         .formatNumber(d3.format("d"))
+        .valueAccessor(function(d){
+            return d;
+        })
         .group(numProjectsByWithdrawals);
 
 
