@@ -58,7 +58,12 @@ def health_projects():
         # and limit the the results to 55000
         projects = collection.find(projection=FIELDS, limit=15000)
         # Convert projects to a list in a JSON object and return the JSON data
-        return json.dumps(list(projects))
+        json_projects =[]
+        for project in projects:
+            json_projects.append(project)
+        json_projects = json.dumps(json_projects)
+        conn.close()
+        return json.projects
 
 
 if __name__ == "__main__":
