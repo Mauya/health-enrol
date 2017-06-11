@@ -37,7 +37,7 @@ function makeGraphs(error, projectsJson) {
     var ReasonForLeavingDim = ndx.dimension(function (d) {
         return d["Reason_For_Leaving"];
     });
-    var TotalEnrollmentDim = ndx.dimension(function (d) {
+    var totalEnrollmentDim = ndx.dimension(function (d) {
         return d["starters"];
     });
     var FeesDim = ndx.dimension(function (d) {
@@ -75,7 +75,7 @@ function makeGraphs(error, projectsJson) {
     var numProjectsByReasonForLeaving = ReasonForLeavingDim.group();
     var totalEnrollment = ndx.groupAll().reduceSum(function(d) {return d["starters"];});
 
-    var numProjectsByGender = GenderDim.group();+
+    var numProjectsByGender = GenderDim.group();
     var numProjectsByAge = AgeDim.group();
     var numProjectsByFees = FeesDim();
     var numProjectsByWhiteBME = WhiteBMEDim.group();
@@ -85,38 +85,45 @@ function makeGraphs(error, projectsJson) {
     var numProjectsByWithdrawals = WithdrawalsDim.group();
 
 //all
-
-    var all = ndx.groupall();
+    var all = ndx.groupAll();
+    var totalEnrollment = ndx.groupAll().reduceSum(function (d) {
+        return d["starters"];
+    })
+    var max_course = totalEnrollmentByCourse.top(1)[0].value;
+    var minDate = dateDim.bottom(1)[0]["Academic_Year"];
+    var maxDate = dateDim.top(1)[0]["Academic_Year"];
+    var mintotalEnrollment = totalEnrollmentDim.bottom(1)[0]["Starters"];
+    var maxTotalEnrollment = totalEnrollmentDim.top(1)[0]["Starters"];
 
 //reduce
-    var TotalEnrollmentByCourse = CourseNameDim.group().reduceSum(function (d) {
+    var totalEnrollmentByCourse = CourseNameDim.group().reduceSum(function (d) {
         return d["starters"];
     });
-    var TotalEnrollmentByAcademicYear = dateDim.group().reduceSum(function (d) {
+    var totalEnrollmentByAcademicYear = dateDim.group().reduceSum(function (d) {
         return d["starters"];
     });
     var totalWithdrawals = ndx.groupAll().reduceSum(function (d) {
         return d["Withdrawals"];
     });
-    var TotalEnrollmentByGender = ndx.groupAll().reduceSum(function (d) {
+    var totalEnrollmentByGender = ndx.groupAll().reduceSum(function (d) {
         return d["Gender"];
     });
-    var TotalEnrollmentByAge = ndx.groupAll().reduceSum(function (d) {
+    var totalEnrollmentByAge = ndx.groupAll().reduceSum(function (d) {
         return d["Age"];
     });
-    var TotalEnrollmentByFees = ndx.groupall().reducesum(function (d) {
+    var totalEnrollmentByFees = ndx.groupall().reducesum(function (d) {
         return d["Fees"];
     });
-    var TotalEnrollmentByWhiteBME = ndx.groupAll().reduceSum(function (d) {
+    var totalEnrollmentByWhiteBME = ndx.groupAll().reduceSum(function (d) {
         return d["White_BME"];
     });
-    var TotalEnrollmentByEthnicity = ndx.groupAll().reduceSum(function (d) {
+    var totalEnrollmentByEthnicity = ndx.groupAll().reduceSum(function (d) {
         return d["Ethnicity_Group"];
     });
-    var TotalEnrollmentByDisabilityDescription = ndx.groupAll().reduceSum(function (d) {
+    var totalEnrollmentByDisabilityDescription = ndx.groupAll().reduceSum(function (d) {
         return d["Disability_Description"];
     });
-    var TotalEnrollmentByDisability = ndx.groupAll().reduceSum(function (d) {
+    var totalEnrollmentByDisability = ndx.groupAll().reduceSum(function (d) {
         return d["Disability_YN"];
     });
 
@@ -124,11 +131,12 @@ function makeGraphs(error, projectsJson) {
 // Apply DC and D3
 
     // Charts variables: chart binding to HTML elements by CSS ID selectors
-
     // Displayed in dash.html
     var selectFieldYear = dc.selectMenu('#menu-select-academic_year');
     var selectFieldCourse = dc.selectMenu('#menu-select-course');
-    var enrollmentCount = dc.numberDisplay(#"num-display-enrolments")
+    var enrollmentCount = dc.numberDisplay('#num-display-enrolments')
+
+
 
     //filter
     /*These selectors filter data by:
