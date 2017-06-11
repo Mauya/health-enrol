@@ -7,6 +7,10 @@
                 <div class="col-sm-3" id="menu-select-academic_year">Year<br></div>
                 <div class="col-sm-3" id="menu-select-course">Course<br></div>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class ="col-sm-12">
             <div class="chart-wrapper" data-step="1">
                 <div id = "num-display-enrolments" class="col-sm-3">
                     <div class="chart-wrapper">
@@ -14,7 +18,7 @@
                             Enrolment Count
                         </div>
                         <div class="chart-stage">
-                            <div id="total-enrol" class="big-numbers"></div>
+                            <div id="total-enrol-nd" class="big-numbers"></div>
                         </div>
                     </div>
                 </div><!-- #num-display-enrolment -->
@@ -51,26 +55,22 @@
                         </div>
                     </div>
                 </div><!-- #num-display-withdrawals -->
-
-	     </div>
-	</div>
-   </div> # first row ends
-
-
-   <div class=row>
-      <div class="col-sm-12">
-        <div class="row">
-          <!-- Time Chart -->
-          <div id=annual-enrol class="col-sm-8">
-            <div class="chart-wrapper" data-step="2">
-              <div class="chart-title">
-                Faculty Of Health Enrolment Trends
+	        </div>
+	    </div># row ends
+       <div class=row>
+          <div class="col-sm-12">
+            <div class="row">
+              <!-- Time Chart -->
+              <div id=annual-enrol class="col-sm-8">
+                <div class="chart-wrapper" data-step="2">
+                  <div class="chart-title">
+                    Faculty Of Health Enrolment Trends
+                  </div>
+                  <div class="chart-stage">
+                    <div id="time-chart"></div>
+                  </div>
+                </div>
               </div>
-              <div class="chart-stage">
-                <div id="time-chart"></div>
-              </div>
-            </div>
-          </div>
 
           <!-- Time Chart -->
 
@@ -83,12 +83,12 @@
               <div class="chart-stage">
                 <div id="course-stage-chart"></div>
               </div>
-            </div>
-          </div>
+             </div>
+           </div>
           <!-- course-stage Pie -->
-   	</div>
-     </div>
-
+   	    </div>
+       </div>
+       </div>
      <div class="row">
           <div class="col-sm-12">
           <!-- level of Study -->
@@ -132,11 +132,8 @@
           </div>
           <!-- Reason-for-Leaving -->
         </div>
-      </div>
 
-   <!--Faculty enrolment Profile -->
-
-
+    <!--Faculty enrolment Profile -->
 	<div id="gender" class="col-sm-3">
             <div class="chart-wrapper" data-step="6">
                 <div class="chart-wrapper">
@@ -185,7 +182,6 @@
                 </div>
             </div>
         </div><!-- disability -->
-      </div>
-
+    </div>
 {% endblock %}
 
