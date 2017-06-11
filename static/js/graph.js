@@ -134,7 +134,10 @@ function makeGraphs(error, projectsJson) {
     // Displayed in dash.html
     var selectFieldYear = dc.selectMenu('#menu-select-academic_year');
     var selectFieldCourse = dc.selectMenu('#menu-select-course');
-    var enrollmentCount = dc.numberDisplay('#num-display-enrolments')
+    var totalEnrollmentND = dc.numberDisplay('#total-enrollment-nd')
+    var totalInternationalND = dc.numberDisplay("#total-international-nd");
+    var totalHomeEuND = dc.numberDisplay("#total-home/eu-nd");
+    var totalWithdrawalsND = dc.numberDisplay("#total-withdrawals-nd");
 
 
 
@@ -151,11 +154,13 @@ function makeGraphs(error, projectsJson) {
         .dimension(CourseNameDim)
         .group(numProjectsByCourseName);
 
-    enrollmentCount
-        .formatNumber(d3.format(","))
-        .valueAssessor(function (d) {return d;})
-        .group(all);
+    totalEnrollmentND
+        .formatNumber(d3.format("d"))
+        .group(totalEnrollment);
 
+    totalWithdrawalsND
+        .formatNumber(d3.format("d"))
+        .group(numProjectsByWithdrawals);
 
 
 
