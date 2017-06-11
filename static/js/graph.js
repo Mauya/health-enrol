@@ -73,7 +73,7 @@ function makeGraphs(error, projectsJson) {
     var numProjectsByModeGroupDim = ModeGroupDim.group();
     var numProjectsByLevelGroupDim = LevelGroupDim.group();
     var numProjectsByReasonForLeaving = ReasonForLeavingDim.group();
-    var TotalEnrollment = TotalEnrollmentDim.group();
+    var totalEnrollment = ndx.groupAll().reduceSum(function(d) {return d["starters"];});
 
     var numProjectsByGender = GenderDim.group();+
     var numProjectsByAge = AgeDim.group();
@@ -128,7 +128,7 @@ function makeGraphs(error, projectsJson) {
     // Displayed in dash.html
     var selectFieldYear = dc.selectMenu('#menu-select-academic_year');
     var selectFieldCourse = dc.selectMenu('#menu-select-course');
-    var enrollmentCount = dc.numberDisplay(#total-enrol)
+    var enrollmentCount = dc.numberDisplay(#"num-display-enrolments")
 
     //filter
     /*These selectors filter data by:

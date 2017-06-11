@@ -18,7 +18,6 @@ FIELDS = {
     'course_stage': True,
     'Mode group': True,
     'Level_group': True,
-    'School': False,
     'Fees': True,
     'Gender': True,
     'Ethnicity': True,
@@ -28,6 +27,7 @@ FIELDS = {
     'Disability_Y/N': True,
     'Age': True,
     'Reason_for_Leaving': True,
+    'Starters': True,
 }
 
 
