@@ -5,10 +5,8 @@ queue()
     .defer(d3.json, "/FOHealth/projects")
     .await(makeGraphs);
 
-function makeGraphs('error', projectsJson) {
-
+function makeGraphs(error, projectsJson) {
     var FOHealthProjects = projectsJson;
-
     var dateFormat = d3.time.format("%Y");
     FOHealthProjects.forEach(function (d) {
     d["Academic_Year"] = dateFormat.parse(d["Academic_Year"]);
