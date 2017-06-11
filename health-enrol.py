@@ -23,7 +23,6 @@ FIELDS = {
     'Ethnicity': True,
     'White/BME': True,
     'Disability_description': True,
-    'Starters': True,
     'Disability_Y/N': True,
     'Age': True,
     'Reason_for_Leaving': True,
