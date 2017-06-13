@@ -81,7 +81,7 @@ function makeGraphs(error, projectsJson) {
         // var numProjectsByWithdrawals = WithdrawalsDim.group();
 
 //all
-//     var all = ndx.groupAll();
+//         var all = ndx.groupAll();
 //         var totalEnrollment = ndx.groupAll().reduceSum(function (d) {
 //             return d["starters"];
 //         });
@@ -166,6 +166,5 @@ function makeGraphs(error, projectsJson) {
 
         dc.renderAll();
 
-    });
 }
 
