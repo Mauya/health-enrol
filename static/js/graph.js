@@ -32,7 +32,7 @@ function makeGraphs(error, projectsJson) {
     // var ReasonForLeavingDim = ndx.dimension(function (d) {
     //     return d["Reason_For_Leaving"];
     // });
-        var totalEnrollmentDim = ndx.dimension(function (d) {
+        var EnrolmentsDim = ndx.dimension(function (d) {
             return d["starters"];
         });
         // var FeesDim = ndx.dimension(function (d) {
@@ -68,8 +68,8 @@ function makeGraphs(error, projectsJson) {
         // var numProjectsByModeGroupDim = ModeGroupDim.group();
         // var numProjectsByLevelGroupDim = LevelGroupDim.group();
         // var numProjectsByReasonForLeaving = ReasonForLeavingDim.group();
-        var totalEnrollment = ndx.groupAll().reduceSum(function (d) {
-            return d["starters"];
+        var numprojectsByEnrolments = ndx.groupAll().reduceSum(function (d) {
+            return d["Enrolments"];
         });
         // var numProjectsByGender = GenderDim.group();
         // var numProjectsByAge = AgeDim.group();
@@ -86,8 +86,8 @@ function makeGraphs(error, projectsJson) {
 //         var all = ndx.groupAll();//
 //         });
 //     var max_course = totalEnrollmentByCourse.top(1)[0].value;
-//     var minTotalEnrollment = totalEnrollmentDim.bottom(1)[0]["Starters"];
-//     var maxTotalEnrollment = totalEnrollmentDim.top(1)[0]["Starters"];
+//     var minTotalEnrolments = totalEnrolmentsDim.bottom(1)[0]["Enrolments"];
+//     var maxTotalEnrolments = totalEnrolmentsDim.top(1)[0]["Enrolments"];
 
 
 // Apply DC and D3
@@ -96,7 +96,7 @@ function makeGraphs(error, projectsJson) {
         // Displayed in dash.html
         var selectFieldYear = dc.selectMenu('#menu-select-academic_year');
         var selectFieldCourse = dc.selectMenu('#menu-select-course');
-        var totalEnrollmentND = dc.numberDisplay('#total-enrollment-nd');
+        var totalEnrolmentsND = dc.numberDisplay('#total-enrolments-nd');
         var totalWithdrawalsND = dc.numberDisplay("#total-withdrawals-nd");
 
         //filter
@@ -112,12 +112,12 @@ function makeGraphs(error, projectsJson) {
             .dimension(CourseNameDim)
             .group(numProjectsByCourseName);
 
-        totalEnrollmentND
+        totalEnrolmentsND
             .formatNumber(d3.format("d"))
             .valueAccessor(function (d) {
                 return d;
             })
-            .group(totalEnrollment)
+            .group(numprojectsByEnrolments)
             .formatNumber(d3.format(".3s"));
 
         totalWithdrawalsND

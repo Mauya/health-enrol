@@ -26,7 +26,7 @@ FIELDS = {
     'Disability_Y/N': True,
     'Age': True,
     'Reason_for_Leaving': True,
-    'Starters': True,
+    'Enrolments': True,
     '_id': False,
 }
 
