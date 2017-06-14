@@ -23,12 +23,12 @@ function makeGraphs(error, projectsJson) {
     // var CourseStageDim = ndx.dimension(function (d) {
     //     return d["Course_Stage"];
     // });
-    // var ModeGroupDim = ndx.dimension(function (d) {
-    //     return d["Mode_Group"];
-    // });
-    // var LevelGroupDim = ndx.dimension(function (d) {
-    //     return d["Level_Group"];
-    // });
+    var ModeGroupDim = ndx.dimension(function (d) {
+        return d["Mode_Group"];
+    });
+    var LevelGroupDim = ndx.dimension(function (d) {
+        return d["Level_Group"];
+    });
     // var ReasonForLeavingDim = ndx.dimension(function (d) {
     //     return d["Reason_For_Leaving"];
     // });
@@ -65,15 +65,15 @@ function makeGraphs(error, projectsJson) {
         var numProjectsByDate = dateDim.group();
         var numProjectsByCourseName = CourseNameDim.group();
         // var numProjectsByCourseStage = CourseStageDim.group();
-        // var numProjectsByModeGroupDim = ModeGroupDim.group();
-        // var numProjectsByLevelGroupDim = LevelGroupDim.group();
+        var numProjectsByModeGroupDim = ModeGroupDim.group();
+        var numProjectsByLevelGroupDim = LevelGroupDim.group();
         // var numProjectsByReasonForLeaving = ReasonForLeavingDim.group();
         var numprojectsByEnrolments = ndx.groupAll().reduceSum(function (d) {
             return d["Enrolments"];
         });
         // var numProjectsByGender = GenderDim.group();
         // var numProjectsByAge = AgeDim.group();
-        var numProjectsByFees = FeesDim();
+        var numProjectsByFees = FeesDim.group();
         // var numProjectsByWhiteBME = WhiteBMEDim.group();
         // var numProjectsByEthnicityGroup = EthnicityGroupDim.group();
         // var numProjectsByDisabilityDescription = DisabilityDescriptionDim.group();
@@ -98,7 +98,10 @@ function makeGraphs(error, projectsJson) {
         var selectFieldCourse = dc.selectMenu('#menu-select-course');
         var totalEnrolmentsND = dc.numberDisplay('#total-enrolments-nd');
         var totalWithdrawalsND = dc.numberDisplay('#total-withdrawals-nd');
-        var feesStatusChart = dc.pieChart('#fee-status-chart');
+        var feesStatusChart = dc.pieChart('#fees-status-chart');
+        var levelGroupChart = dc.rowChart("#level-group-chart");
+        var modeGroupChart = dc.rowChart("#mode-group-chart");
+        //var resourceTypeChart = dc.rowChart("#resource-type-row-chart");
 
         //filter
         /*These selectors filter data by:
@@ -119,7 +122,7 @@ function makeGraphs(error, projectsJson) {
                 return d;
             })
             .group(numprojectsByEnrolments)
-            .formatNumber(d3.format(".3s"));
+            .formatNumber(d3.format(","));
 
         totalWithdrawalsND
             .formatNumber(d3.format("d"))
@@ -127,7 +130,7 @@ function makeGraphs(error, projectsJson) {
                 return d;
             })
             .group(numProjectsByWithdrawals)
-            .formatNumber(d3.format(".2s"));
+            .formatNumber(d3.format(","));
 
         feesStatusChart
             .height(200)
@@ -137,7 +140,20 @@ function makeGraphs(error, projectsJson) {
             .externalLabels(1)
             .dimension(FeesDim)
             .group(numProjectsByFees);
-        
+
+        levelGroupChart
+           .width(300)
+           .height(250)
+           .dimension(LevelGroupDim)
+           .group(numProjectsByLevelGroupDim)
+           .xAxis().ticks(4);
+
+        modeGroupChart
+           .width(300)
+           .height(250)
+           .dimension(ModeGroupDim)
+           .group(numProjectsByModeGroupDim)
+           .xAxis().ticks(4);
 
 
 
