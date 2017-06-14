@@ -56,9 +56,9 @@ function makeGraphs(error, projectsJson) {
         // var DisabilityDim = ndx.dimension(function (d) {
         //     return d["Disability_YN"];
         // });
-        // var WithdrawalsDim = ndx.dimension(function (d) {
-        //     return d["Withdrawals"];
-        // });
+        var WithdrawalsDim = ndx.dimension(function (d) {
+            return d["Withdrawals"];
+        });
 
 
 // Groups- calculate metrics
@@ -78,50 +78,14 @@ function makeGraphs(error, projectsJson) {
         // var numProjectsByEthnicityGroup = EthnicityGroupDim.group();
         // var numProjectsByDisabilityDescription = DisabilityDescriptionDim.group();
         // var numProjectsByDisability = DisabilityDim.group();
-        // var numProjectsByWithdrawals = WithdrawalsDim.group();
+        var numProjectsByWithdrawals = WithdrawalsDim.group();
 
-//all
-//         var all = ndx.groupAll();
-//         var totalEnrollment = ndx.groupAll().reduceSum(function (d) {
-//             return d["starters"];
+    //all
+//         var all = ndx.groupAll();//
 //         });
 //     var max_course = totalEnrollmentByCourse.top(1)[0].value;
-//     var minDate = dateDim.bottom(1)[0]["Academic_Year"];
-//     var maxDate = dateDim.top(1)[0]["Academic_Year"];
-//     var mintotalEnrollment = totalEnrollmentDim.bottom(1)[0]["Starters"];
+//     var minTotalEnrollment = totalEnrollmentDim.bottom(1)[0]["Starters"];
 //     var maxTotalEnrollment = totalEnrollmentDim.top(1)[0]["Starters"];
-
-//reduce
-//     var totalEnrollmentByCourse = CourseNameDim.group().reduceSum(function (d) {
-//         return d["starters"];
-//     });
-        // var totalEnrollmentByAcademicYear = dateDim.group().reduceSum(function (d) {
-        //     return d["starters"];
-        // });
-        // var totalWithdrawals = ndx.groupAll().reduceSum(function (d) {
-        //     return d["Withdrawals"];
-        // });
-        // var totalEnrollmentByGender = ndx.groupAll().reduceSum(function (d) {
-        //     return d["Gender"];
-        // });
-        // var totalEnrollmentByAge = ndx.groupAll().reduceSum(function (d) {
-        //     return d["Age"];
-        // });
-        // var totalEnrollmentByFees = ndx.groupall().reducesum(function (d) {
-        //     return d["Fees"];
-        // });
-        // var totalEnrollmentByWhiteBME = ndx.groupAll().reduceSum(function (d) {
-        //     return d["White_BME"];
-        // });
-        // var totalEnrollmentByEthnicity = ndx.groupAll().reduceSum(function (d) {
-        //     return d["Ethnicity_Group"];
-        // });
-        // var totalEnrollmentByDisabilityDescription = ndx.groupAll().reduceSum(function (d) {
-        //     return d["Disability_Description"];
-        // });
-        // var totalEnrollmentByDisability = ndx.groupAll().reduceSum(function (d) {
-        //     return d["Disability_YN"];
-        // });
 
 
 // Apply DC and D3
@@ -133,8 +97,7 @@ function makeGraphs(error, projectsJson) {
         // var totalEnrollmentND = dc.numberDisplay('#total-enrollment-nd');
         // var totalInternationalND = dc.numberDisplay("#total-international-nd");
         // var totalHomeEuND = dc.numberDisplay("#total-home/eu-nd");
-        // var totalWithdrawalsND = dc.numberDisplay("#total-withdrawals-nd");
-
+        var totalWithdrawalsND = dc.numberDisplay("#total-withdrawals-nd");
 
         //filter
         /*These selectors filter data by:
@@ -156,12 +119,12 @@ function makeGraphs(error, projectsJson) {
         //     })
         //     .group(totalEnrollment);
 
-        // totalWithdrawalsND
-        //     .formatNumber(d3.format("d"))
-        //     .valueAccessor(function(d){
-        //         return d;
-        //     })
-        //     .group(numProjectsByWithdrawals);
+        totalWithdrawalsND
+            .formatNumber(d3.format("d"))
+            .valueAccessor(function(d){
+                return d;
+            })
+            .group(numProjectsByWithdrawals);
 
 
         dc.renderAll();
