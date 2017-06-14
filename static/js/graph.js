@@ -32,9 +32,9 @@ function makeGraphs(error, projectsJson) {
     // var ReasonForLeavingDim = ndx.dimension(function (d) {
     //     return d["Reason_For_Leaving"];
     // });
-    // var totalEnrollmentDim = ndx.dimension(function (d) {
-    //     return d["starters"];
-        // });
+        var totalEnrollmentDim = ndx.dimension(function (d) {
+            return d["starters"];
+        });
         // var FeesDim = ndx.dimension(function (d) {
         //     return d["Fees"];
         // });
@@ -68,9 +68,9 @@ function makeGraphs(error, projectsJson) {
         // var numProjectsByModeGroupDim = ModeGroupDim.group();
         // var numProjectsByLevelGroupDim = LevelGroupDim.group();
         // var numProjectsByReasonForLeaving = ReasonForLeavingDim.group();
-        // var totalEnrollment = ndx.groupAll().reduceSum(function (d) {
-        //     return d["starters"];
-        // });
+        var totalEnrollment = ndx.groupAll().reduceSum(function (d) {
+            return d["starters"];
+        });
         // var numProjectsByGender = GenderDim.group();
         // var numProjectsByAge = AgeDim.group();
         // var numProjectsByFees = FeesDim();
@@ -78,7 +78,9 @@ function makeGraphs(error, projectsJson) {
         // var numProjectsByEthnicityGroup = EthnicityGroupDim.group();
         // var numProjectsByDisabilityDescription = DisabilityDescriptionDim.group();
         // var numProjectsByDisability = DisabilityDim.group();
-        var numProjectsByWithdrawals = WithdrawalsDim.group();
+        var numProjectsByWithdrawals = ndx.groupAll().reduceSum(function (d) {
+            return d["Withdrawals"];
+        });
 
     //all
 //         var all = ndx.groupAll();//
@@ -94,9 +96,7 @@ function makeGraphs(error, projectsJson) {
         // Displayed in dash.html
         var selectFieldYear = dc.selectMenu('#menu-select-academic_year');
         var selectFieldCourse = dc.selectMenu('#menu-select-course');
-        // var totalEnrollmentND = dc.numberDisplay('#total-enrollment-nd');
-        // var totalInternationalND = dc.numberDisplay("#total-international-nd");
-        // var totalHomeEuND = dc.numberDisplay("#total-home/eu-nd");
+        var totalEnrollmentND = dc.numberDisplay('#total-enrollment-nd');
         var totalWithdrawalsND = dc.numberDisplay("#total-withdrawals-nd");
 
         //filter
@@ -112,19 +112,21 @@ function makeGraphs(error, projectsJson) {
             .dimension(CourseNameDim)
             .group(numProjectsByCourseName);
 
-        // totalEnrollmentND
-        //     .formatNumber(totalEnrollment)
-        //     .valueAccessor(function (d) {
-        //         return d;
-        //     })
-        //     .group(totalEnrollment);
+        totalEnrollmentND
+            .formatNumber(d3.format("d"))
+            .valueAccessor(function (d) {
+                return d;
+            })
+            .group(totalEnrollment)
+            .formatNumber(d3.format(".3s"));
 
         totalWithdrawalsND
             .formatNumber(d3.format("d"))
             .valueAccessor(function(d){
                 return d;
             })
-            .group(numProjectsByWithdrawals);
+            .group(numProjectsByWithdrawals)
+            .formatNumber(d3.format(".2s"));
 
 
         dc.renderAll();
