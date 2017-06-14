@@ -8,7 +8,7 @@ queue()
 function makeGraphs(error, projectsJson) {
     var FOHealthProjects = projectsJson;
     FOHealthProjects.forEach(function (d) {
-        d["Starters"] = +d["Starters"];
+        d["Enrolments"] = +d["Enrolments"];
     });
     // Crossfilter instance
     var ndx = crossfilter(FOHealthProjects);
@@ -33,11 +33,11 @@ function makeGraphs(error, projectsJson) {
     //     return d["Reason_For_Leaving"];
     // });
         var EnrolmentsDim = ndx.dimension(function (d) {
-            return d["starters"];
+            return d["Enrolments"];
         });
-        // var FeesDim = ndx.dimension(function (d) {
-        //     return d["Fees"];
-        // });
+        var FeesDim = ndx.dimension(function (d) {
+            return d["Fees"];
+        });
         // var GenderDim = ndx.dimension(function (d) {
         //     return d["Gender"];
         // });
@@ -73,7 +73,7 @@ function makeGraphs(error, projectsJson) {
         });
         // var numProjectsByGender = GenderDim.group();
         // var numProjectsByAge = AgeDim.group();
-        // var numProjectsByFees = FeesDim();
+        var numProjectsByFees = FeesDim();
         // var numProjectsByWhiteBME = WhiteBMEDim.group();
         // var numProjectsByEthnicityGroup = EthnicityGroupDim.group();
         // var numProjectsByDisabilityDescription = DisabilityDescriptionDim.group();
@@ -97,7 +97,8 @@ function makeGraphs(error, projectsJson) {
         var selectFieldYear = dc.selectMenu('#menu-select-academic_year');
         var selectFieldCourse = dc.selectMenu('#menu-select-course');
         var totalEnrolmentsND = dc.numberDisplay('#total-enrolments-nd');
-        var totalWithdrawalsND = dc.numberDisplay("#total-withdrawals-nd");
+        var totalWithdrawalsND = dc.numberDisplay('#total-withdrawals-nd');
+        var feesStatusChart = dc.pieChart('#fee-status-chart');
 
         //filter
         /*These selectors filter data by:
@@ -127,6 +128,17 @@ function makeGraphs(error, projectsJson) {
             })
             .group(numProjectsByWithdrawals)
             .formatNumber(d3.format(".2s"));
+
+        feesStatusChart
+            .height(200)
+            .radius(90)
+            .innerRadius(40)
+            .transitionDuration(2000)
+            .externalLabels(1)
+            .dimension(FeesDim)
+            .group(numProjectsByFees);
+        
+
 
 
         dc.renderAll();
