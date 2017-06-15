@@ -7,7 +7,10 @@ queue()
 
 function makeGraphs(error, projectsJson) {
     var FOHealthProjects = projectsJson;
+    var dateFormat =d3.time.format("%Y");
     FOHealthProjects.forEach(function (d) {
+        d["Academic_Year"] = dateFormat.parse(d["Academic_Year"]);
+        d["Academic_Year"].setDate(1)
         d["Enrolments"] = +d["Enrolments"];
     });
     // Crossfilter instance
@@ -86,7 +89,9 @@ function makeGraphs(error, projectsJson) {
             return d["Enrolments"];
             });
 
-//     var max_course = totalEnrollmentByCourse.top(1)[0].value;
+//     var max_course = totalEnrolmentByCourse.top(1)[0].value;
+        var minDate =dateDim.bottom(1)[0]["Academic_Year"];
+        var maxDate =dateDim.top(1)[0]["Academic_Year"];
 //     var minTotalEnrolments = totalEnrolmentsDim.bottom(1)[0]["Enrolments"];
 //     var maxTotalEnrolments = totalEnrolmentsDim.top(1)[0]["Enrolments"];
 
@@ -140,6 +145,9 @@ function makeGraphs(error, projectsJson) {
             .margin({top:10, right:10, bottom:20, left:50})
             .dimension(dateDim)
             .group(numProjectsByDate)
+            .transitionDuration(500)
+            .elasticY(true)
+            .x(d3.time.scale().domain([minDate, maxDate]))
             .xAxis();
 
         feesStatusChart
