@@ -23,18 +23,18 @@ function makeGraphs(error, projectsJson) {
     // var CourseStageDim = ndx.dimension(function (d) {
     //     return d["Course_Stage"];
     // });
-    var ModeGroupDim = ndx.dimension(function (d) {
-        return d["Mode_Group"];
-    });
-    var LevelGroupDim = ndx.dimension(function (d) {
-        return d["Level_Group"];
-    });
+    // var ModeGroupDim = ndx.dimension(function (d) {
+    //     return d["Mode_Group"];
+    // });
+    // var LevelGroupDim = ndx.dimension(function (d) {
+    //     return d["Level_Group"];
+    // });
     // var ReasonForLeavingDim = ndx.dimension(function (d) {
     //     return d["Reason_For_Leaving"];
     // });
-        var EnrolmentsDim = ndx.dimension(function (d) {
-            return d["Enrolments"];
-        });
+    var EnrolmentsDim = ndx.dimension(function (d) {
+       return d["Enrolments"];
+   });
         var FeesDim = ndx.dimension(function (d) {
             return d["Fees"];
         });
@@ -65,12 +65,10 @@ function makeGraphs(error, projectsJson) {
         var numProjectsByDate = dateDim.group();
         var numProjectsByCourseName = CourseNameDim.group();
         // var numProjectsByCourseStage = CourseStageDim.group();
-        var numProjectsByModeGroupDim = ModeGroupDim.group();
-        var numProjectsByLevelGroupDim = LevelGroupDim.group();
+       // var numProjectsByModeGroupDim = ModeGroupDim.group();
+       //  var numProjectsByLevelGroupDim = LevelGroupDim.group();
         // var numProjectsByReasonForLeaving = ReasonForLeavingDim.group();
-        var numprojectsByEnrolments = ndx.groupAll().reduceSum(function (d) {
-            return d["Enrolments"];
-        });
+
         // var numProjectsByGender = GenderDim.group();
         // var numProjectsByAge = AgeDim.group();
         var numProjectsByFees = FeesDim.group();
@@ -83,8 +81,11 @@ function makeGraphs(error, projectsJson) {
         });
 
     //all
-//         var all = ndx.groupAll();//
-//         });
+        var all = ndx.groupAll();
+        var numProjectsByEnrolments = ndx.groupAll().reduceSum(function (d) {
+            return d["Enrolments"];
+            });
+
 //     var max_course = totalEnrollmentByCourse.top(1)[0].value;
 //     var minTotalEnrolments = totalEnrolmentsDim.bottom(1)[0]["Enrolments"];
 //     var maxTotalEnrolments = totalEnrolmentsDim.top(1)[0]["Enrolments"];
@@ -98,9 +99,10 @@ function makeGraphs(error, projectsJson) {
         var selectFieldCourse = dc.selectMenu('#menu-select-course');
         var totalEnrolmentsND = dc.numberDisplay('#total-enrolments-nd');
         var totalWithdrawalsND = dc.numberDisplay('#total-withdrawals-nd');
+        var timeChart = dc.lineChart("#time-chart");
         var feesStatusChart = dc.pieChart('#fees-status-chart');
-        var levelGroupChart = dc.rowChart("#level-group-chart");
-        var modeGroupChart = dc.rowChart("#mode-group-chart");
+        //var levelGroupChart = dc.rowChart("#level-group-chart");
+        //var modeGroupChart = dc.rowChart("#mode-group-chart");
         //var resourceTypeChart = dc.rowChart("#resource-type-row-chart");
 
         //filter
@@ -121,7 +123,7 @@ function makeGraphs(error, projectsJson) {
             .valueAccessor(function (d) {
                 return d;
             })
-            .group(numprojectsByEnrolments)
+            .group(numProjectsByEnrolments)
             .formatNumber(d3.format(","));
 
         totalWithdrawalsND
@@ -132,6 +134,14 @@ function makeGraphs(error, projectsJson) {
             .group(numProjectsByWithdrawals)
             .formatNumber(d3.format(","));
 
+        timeChart
+            .width(600)
+            .height(250)
+            .margin({top:10, right:10, bottom:20, left:50})
+            .dimension(dateDim)
+            .group(numProjectsByDate)
+            .xAxis();
+
         feesStatusChart
             .height(200)
             .radius(90)
@@ -140,22 +150,6 @@ function makeGraphs(error, projectsJson) {
             .externalLabels(1)
             .dimension(FeesDim)
             .group(numProjectsByFees);
-
-        levelGroupChart
-           .width(300)
-           .height(250)
-           .dimension(LevelGroupDim)
-           .group(numProjectsByLevelGroupDim)
-           .xAxis().ticks(4);
-
-        modeGroupChart
-           .width(300)
-           .height(250)
-           .dimension(ModeGroupDim)
-           .group(numProjectsByModeGroupDim)
-           .xAxis().ticks(4);
-
-
 
         dc.renderAll();
 
