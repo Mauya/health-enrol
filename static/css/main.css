@@ -170,7 +170,7 @@ body.application .navbar-inverse, .keen-dashboard .navbar-inverse {
 
 /*styling charts*/
 .row{
-    margin-top: 20px;
+    margin-top: 10px;
 }
 #menu-select{
     width: 200px;
@@ -194,4 +194,8 @@ body.application .navbar-inverse, .keen-dashboard .navbar-inverse {
     font-size: 40px;
     background-color: #66978a;
     color: #ffffff;
+}
+
+#fees-status-chart{
+    color: #000000;
 }

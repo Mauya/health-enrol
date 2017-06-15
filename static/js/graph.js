@@ -27,9 +27,9 @@ function makeGraphs(error, projectsJson) {
     // var ModeGroupDim = ndx.dimension(function (d) {
     //     return d["Mode_Group"];
     // });
-    // var LevelGroupDim = ndx.dimension(function (d) {
-    //     return d["Level_Group"];
-    // });
+    var LevelGroupDim = ndx.dimension(function (d) {
+        return d["Level_Group"];
+    });
     // var ReasonForLeavingDim = ndx.dimension(function (d) {
     //     return d["Reason_For_Leaving"];
     // });
@@ -66,8 +66,8 @@ function makeGraphs(error, projectsJson) {
         var numProjectsByDate = dateDim.group();
         var numProjectsByCourseName = CourseNameDim.group();
         // var numProjectsByCourseStage = CourseStageDim.group();
-       // var numProjectsByModeGroupDim = ModeGroupDim.group();
-       //  var numProjectsByLevelGroupDim = LevelGroupDim.group();
+       // var numProjectsByModeGroup = ModeGroupDim.group();
+        var numProjectsByLevelGroup = LevelGroupDim.group();
         // var numProjectsByReasonForLeaving = ReasonForLeavingDim.group();
 
         // var numProjectsByGender = GenderDim.group();
@@ -101,7 +101,7 @@ function makeGraphs(error, projectsJson) {
         var totalWithdrawalsND = dc.numberDisplay('#total-withdrawals-nd');
         // var totalEnrolmentChart = dc.barChart("#total-Enrolment-chart");
         var feesStatusChart = dc.pieChart('#fees-status-chart');
-        //var levelGroupChart = dc.rowChart("#level-group-chart");
+        var levelGroupChart = dc.rowChart("#level-group-chart");
         //var modeGroupChart = dc.rowChart("#mode-group-chart");
         //var resourceTypeChart = dc.rowChart("#resource-type-row-chart");
 
@@ -149,6 +149,13 @@ function makeGraphs(error, projectsJson) {
             .externalLabels(1)
             .dimension(FeesDim)
             .group(numProjectsByFees);
+
+        levelGroupChart
+            .width(350)
+            .height(250)
+            .dimension(LevelGroupDim)
+            .group(numProjectsByLevelGroup)
+            .xAxis().ticks(4);
 
         dc.renderAll();
 
