@@ -7,12 +7,10 @@ queue()
 
 function makeGraphs(error, projectsJson) {
     var FOHealthProjects = projectsJson;
-    var dateFormat =d3.time.format("%Y");
     FOHealthProjects.forEach(function (d) {
-        d["Academic_Year"] = dateFormat.parse(d["Academic_Year"]);
-        d["Academic_Year"].setDate(1)
         d["Enrolments"] = +d["Enrolments"];
     });
+
     // Crossfilter instance
     var ndx = crossfilter(FOHealthProjects);
 
@@ -84,17 +82,14 @@ function makeGraphs(error, projectsJson) {
         });
 
     //all
-        var all = ndx.groupAll();
+    //     var all = ndx.groupAll();
         var numProjectsByEnrolments = ndx.groupAll().reduceSum(function (d) {
             return d["Enrolments"];
             });
 
 //     var max_course = totalEnrolmentByCourse.top(1)[0].value;
-        var minDate =dateDim.bottom(1)[0]["Academic_Year"];
-        var maxDate =dateDim.top(1)[0]["Academic_Year"];
 //     var minTotalEnrolments = totalEnrolmentsDim.bottom(1)[0]["Enrolments"];
 //     var maxTotalEnrolments = totalEnrolmentsDim.top(1)[0]["Enrolments"];
-
 
 // Apply DC and D3
 
@@ -104,7 +99,7 @@ function makeGraphs(error, projectsJson) {
         var selectFieldCourse = dc.selectMenu('#menu-select-course');
         var totalEnrolmentsND = dc.numberDisplay('#total-enrolments-nd');
         var totalWithdrawalsND = dc.numberDisplay('#total-withdrawals-nd');
-        var timeChart = dc.lineChart("#time-chart");
+        // var totalEnrolmentChart = dc.barChart("#total-Enrolment-chart");
         var feesStatusChart = dc.pieChart('#fees-status-chart');
         //var levelGroupChart = dc.rowChart("#level-group-chart");
         //var modeGroupChart = dc.rowChart("#mode-group-chart");
@@ -139,16 +134,12 @@ function makeGraphs(error, projectsJson) {
             .group(numProjectsByWithdrawals)
             .formatNumber(d3.format(","));
 
-        timeChart
-            .width(600)
-            .height(250)
-            .margin({top:10, right:10, bottom:20, left:50})
-            .dimension(dateDim)
-            .group(numProjectsByDate)
-            .transitionDuration(500)
-            .elasticY(true)
-            .x(d3.time.scale().domain([minDate, maxDate]))
-            .xAxis();
+        // totalEnrolmentChart
+        //     .width(500)
+        //     .height(250)
+        //     .dimension(dateDim)
+        //     .group(numProjectsByDate)
+        //     .xAxis();
 
         feesStatusChart
             .height(200)

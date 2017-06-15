@@ -168,22 +168,30 @@ body.application .navbar-inverse, .keen-dashboard .navbar-inverse {
     background-color: rgba(48,59,69, 0.95);
 }
 
-/* Intro.js custom rules */
-div.introjs-tooltiptext {
-   font-family: Helvetica, Arial, sans-serif;
-   font-weight: normal;
-   font-size: 12px;
-   padding-bottom: 12px;
+/*styling charts*/
+.row{
+    margin-top: 20px;
+}
+#menu-select{
+    width: 200px;
+    font-size: 20px;
+    margin-left: 40px;
+    background-color: #66978a;
+    color: #ffffff;
 }
 
-.introjs-bullets ul li a {
-    margin-bottom: 8px;
+#total-enrolments-nd {
+    width: 200px;
+    margin-left: 40px;
+    font-size: 40px;
+    background-color: #66978a;
+    color: #ffffff;
 }
 
-#outer {
-    padding: 1.5%;
-}
-
-#intro-start {
-  color: lightblue
+#total-withdrawals-nd{
+    width: 200px;
+    margin-left: 40px;
+    font-size: 40px;
+    background-color: #66978a;
+    color: #ffffff;
 }
