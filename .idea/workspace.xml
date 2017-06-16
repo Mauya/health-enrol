@@ -34,8 +34,8 @@
       <file leaf-file-name="graph.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/graph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1187">
-              <caret line="154" column="24" lean-forward="false" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="24" />
+            <state relative-caret-position="382">
+              <caret line="162" column="15" lean-forward="false" selection-start-line="162" selection-start-column="15" selection-end-line="162" selection-end-column="15" />
               <folding>
                 <element signature="e#0#39#0" expanded="false" />
               </folding>
@@ -855,7 +855,14 @@
       <option name="project" value="LOCAL" />
       <updated>1497568428467</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Added level group pie chart">
+      <created>1497628680460</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1497628680460</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -900,7 +907,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="INCLUDE_TEXT_INTO_SHELF" value="true" />
-    <MESSAGE value="added pymongo module for health-enrol" />
     <MESSAGE value="updated py file" />
     <MESSAGE value="added the first select menu in graph.js" />
     <MESSAGE value="updated the queue to read the json" />
@@ -925,7 +931,8 @@
     <MESSAGE value="Added level grpoup chart" />
     <MESSAGE value="Added time line chart" />
     <MESSAGE value="Added styles for select and number" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added styles for select and number" />
+    <MESSAGE value="Added level group pie chart" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added level group pie chart" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1287,8 +1294,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/graph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1187">
-          <caret line="154" column="24" lean-forward="false" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="24" />
+        <state relative-caret-position="382">
+          <caret line="162" column="15" lean-forward="false" selection-start-line="162" selection-start-column="15" selection-end-line="162" selection-end-column="15" />
           <folding>
             <element signature="e#0#39#0" expanded="false" />
           </folding>

@@ -158,10 +158,9 @@ function makeGraphs(error, projectsJson) {
             .group(numProjectsByLevelGroup)
             .renderLabel(true)
             .legend(dc.legend)
-            .title(function (d){
+            .title(function (d) {
                 return d.value;
-            }
-
+            });
         dc.renderAll();
 
 }
