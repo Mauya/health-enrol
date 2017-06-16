@@ -101,7 +101,7 @@ function makeGraphs(error, projectsJson) {
         var totalWithdrawalsND = dc.numberDisplay('#total-withdrawals-nd');
         // var totalEnrolmentChart = dc.barChart("#total-Enrolment-chart");
         var feesStatusChart = dc.pieChart('#fees-status-chart');
-        var levelGroupChart = dc.rowChart("#level-group-chart");
+        var levelGroupChart = dc.pieChart("#level-group-chart");
         //var modeGroupChart = dc.rowChart("#mode-group-chart");
         //var resourceTypeChart = dc.rowChart("#resource-type-row-chart");
 
@@ -153,9 +153,14 @@ function makeGraphs(error, projectsJson) {
         levelGroupChart
             .width(350)
             .height(250)
+            .innerRadius(40)
             .dimension(LevelGroupDim)
             .group(numProjectsByLevelGroup)
-            .xAxis().ticks(4);
+            .renderLabel(true)
+            .legend(dc.legend)
+            .title(function (d){
+                return d.value;
+            }
 
         dc.renderAll();
 
