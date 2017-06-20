@@ -65,27 +65,19 @@ function makeGraphs(error, projectsJson) {
 // Groups- calculate metrics
         var numProjectsByDate = dateDim.group();
         var numProjectsByCourseName = CourseNameDim.group();
-        // var numProjectsByCourseStage = CourseStageDim.group();
-       // var numProjectsByModeGroup = ModeGroupDim.group();
-        var numProjectsByLevelGroup = LevelGroupDim.group();
-        // var numProjectsByReasonForLeaving = ReasonForLeavingDim.group();
-
-        // var numProjectsByGender = GenderDim.group();
-        // var numProjectsByAge = AgeDim.group();
-        var numProjectsByFees = FeesDim.group();
-        // var numProjectsByWhiteBME = WhiteBMEDim.group();
-        // var numProjectsByEthnicityGroup = EthnicityGroupDim.group();
-        // var numProjectsByDisabilityDescription = DisabilityDescriptionDim.group();
-        // var numProjectsByDisability = DisabilityDim.group();
-        var numProjectsByWithdrawals = ndx.groupAll().reduceSum(function (d) {
-            return d["Withdrawals"];
-        });
-
-    //all
-    //     var all = ndx.groupAll();
         var numProjectsByEnrolments = ndx.groupAll().reduceSum(function (d) {
             return d["Enrolments"];
             });
+        var numProjectsByWithdrawals = ndx.groupAll().reduceSum(function (d) {
+            return d["Withdrawals"];
+        });
+        var numProjectsByFees = FeesDim.group();
+        var numProjectsByLevelGroup = LevelGroupDim.group();
+
+
+    //all
+    //     var all = ndx.groupAll();
+
 
 //     var max_course = totalEnrolmentByCourse.top(1)[0].value;
 //     var minTotalEnrolments = totalEnrolmentsDim.bottom(1)[0]["Enrolments"];
@@ -99,11 +91,8 @@ function makeGraphs(error, projectsJson) {
         var selectFieldCourse = dc.selectMenu('#menu-select-course');
         var totalEnrolmentsND = dc.numberDisplay('#total-enrolments-nd');
         var totalWithdrawalsND = dc.numberDisplay('#total-withdrawals-nd');
-        // var totalEnrolmentChart = dc.barChart("#total-Enrolment-chart");
         var feesStatusChart = dc.pieChart('#fees-status-chart');
         var levelGroupChart = dc.pieChart("#level-group-chart");
-        //var modeGroupChart = dc.rowChart("#mode-group-chart");
-        //var resourceTypeChart = dc.rowChart("#resource-type-row-chart");
 
         //filter
         /*These selectors filter data by:
