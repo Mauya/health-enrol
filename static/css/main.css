@@ -97,6 +97,7 @@ h3 {
 }
 
 .dc-chart .pie-slice {
+    color: #1a1a1a;
     fill: #fff;
     font-size: 12px;
     cursor: pointer;

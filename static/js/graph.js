@@ -24,20 +24,20 @@ function makeGraphs(error, projectsJson) {
     // var CourseStageDim = ndx.dimension(function (d) {
     //     return d["Course_Stage"];
     // });
-    // var ModeGroupDim = ndx.dimension(function (d) {
-    //     return d["Mode_Group"];
-    // });
-    var LevelGroupDim = ndx.dimension(function (d) {
-        return d["Level_Group"];
-    });
+        var ModeGroupDim = ndx.dimension(function (d) {
+            return d["Mode_Group"];
+        });
+        var LevelGroupDim = ndx.dimension(function (d) {
+            return d["Level_Group"];
+        });
     // var ReasonForLeavingDim = ndx.dimension(function (d) {
     //     return d["Reason_For_Leaving"];
     // });
-    var EnrolmentsDim = ndx.dimension(function (d) {
-       return d["Enrolments"];
-   });
+        var EnrolmentsDim = ndx.dimension(function (d) {
+           return d["Enrolments"];
+       });
         var FeesDim = ndx.dimension(function (d) {
-            return d["Fees"];
+            return d["Fees_Status"];
         });
         // var GenderDim = ndx.dimension(function (d) {
         //     return d["Gender"];
@@ -73,6 +73,7 @@ function makeGraphs(error, projectsJson) {
         });
         var numProjectsByFees = FeesDim.group();
         var numProjectsByLevelGroup = LevelGroupDim.group();
+        var numProjectsByModeGroup = ModeGroupDim.group();
 
 
     //all
@@ -91,8 +92,10 @@ function makeGraphs(error, projectsJson) {
         var selectFieldCourse = dc.selectMenu('#menu-select-course');
         var totalEnrolmentsND = dc.numberDisplay('#total-enrolments-nd');
         var totalWithdrawalsND = dc.numberDisplay('#total-withdrawals-nd');
+        var totalEnrolmentChart = dc.barChart("#total-enrolment-chart");
         var feesStatusChart = dc.pieChart('#fees-status-chart');
-        var levelGroupChart = dc.pieChart("#level-group-chart");
+        var levelGroupChart = dc.rowChart("#level-group-chart");
+        var modeGroupChart = dc.rowChart("#mode-group-chart");
 
         //filter
         /*These selectors filter data by:
@@ -123,33 +126,45 @@ function makeGraphs(error, projectsJson) {
             .group(numProjectsByWithdrawals)
             .formatNumber(d3.format(","));
 
-        // totalEnrolmentChart
-        //     .width(500)
-        //     .height(250)
-        //     .dimension(dateDim)
-        //     .group(numProjectsByDate)
-        //     .xAxis();
+        totalEnrolmentChart
+            .width(500)
+            .height(250)
+            .dimension(dateDim)
+            .group(numProjectsByDate)
+            .x(d3.scale.ordinal().domain(dateDim).range(2013, 2017)) // Need the empty val to offset the first value
+            .xUnits(dc.units.ordinal)// Tell Dc.js that we're using an ordinal x axis
+            .xAxis().ticks(5);
 
         feesStatusChart
-            .height(200)
-            .radius(90)
+            .width(300)
+            .height(250)
+            .radius(100)
             .innerRadius(40)
-            .transitionDuration(2000)
+            .transitionDuration(1000)
             .externalLabels(1)
+            .legend(dc.legend())
             .dimension(FeesDim)
             .group(numProjectsByFees);
 
         levelGroupChart
-            .width(350)
+            .width(300)
             .height(250)
-            .innerRadius(40)
             .dimension(LevelGroupDim)
             .group(numProjectsByLevelGroup)
-            .renderLabel(true)
-            .legend(dc.legend)
-            .title(function (d) {
-                return d.value;
-            });
+            .colors(d3.scale.category20b())
+            .elasticX(true)
+            .xAxis().ticks(4);
+
+        modeGroupChart
+            .width(300)
+            .height(250)
+            .dimension(ModeGroupDim)
+            .group(numProjectsByModeGroup)
+            .colors(d3.scale.category20b())
+            .elasticX(true)
+            .xAxis().ticks(4);
+
+
         dc.renderAll();
 
 }
