@@ -153,7 +153,7 @@ function makeGraphs(error, projectsJson) {
             .group(numProjectsByLevelGroup)
             .colors(d3.scale.category20b())
             .elasticX(true)
-            .xAxis().ticks(4);
+            .xAxis().ticks(5);
 
         modeGroupChart
             .width(300)
@@ -162,7 +162,7 @@ function makeGraphs(error, projectsJson) {
             .group(numProjectsByModeGroup)
             .colors(d3.scale.category20b())
             .elasticX(true)
-            .xAxis().ticks(4);
+            .xAxis().ticks(5);
 
 
         dc.renderAll();
