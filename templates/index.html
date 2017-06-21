@@ -17,6 +17,9 @@
               <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
               <li><a href="{{ url_for('dash') }}">Dashboard</a></li>
             </ul>
+            <ul class = "nav navbar-nav navbar-right">
+                <li><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a></li>
+            </ul>
         </div>
     </nav>
 

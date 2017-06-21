@@ -94,8 +94,8 @@ function makeGraphs(error, projectsJson) {
         var totalWithdrawalsND = dc.numberDisplay('#total-withdrawals-nd');
         var totalEnrolmentChart = dc.barChart("#total-enrolment-chart");
         var feesStatusChart = dc.pieChart('#fees-status-chart');
-        var levelGroupChart = dc.rowChart("#level-group-chart");
-        var modeGroupChart = dc.rowChart("#mode-group-chart");
+        var levelGroupChart = dc.pieChart("#level-group-chart");
+        var modeGroupChart = dc.pieChart("#mode-group-chart");
 
         //filter
         /*These selectors filter data by:
@@ -139,7 +139,7 @@ function makeGraphs(error, projectsJson) {
             .width(300)
             .height(250)
             .radius(100)
-            .innerRadius(40)
+            .innerRadius(0)
             .transitionDuration(1000)
             .externalLabels(1)
             .legend(dc.legend())
@@ -149,21 +149,23 @@ function makeGraphs(error, projectsJson) {
         levelGroupChart
             .width(300)
             .height(250)
+            .radius(100)
+            .innerRadius(0)
+            .transitionDuration(1000)
             .dimension(LevelGroupDim)
             .group(numProjectsByLevelGroup)
-            .colors(d3.scale.category20b())
-            .elasticX(true)
-            .xAxis().ticks(5);
+            .colors(d3.scaleOrdinal(['#98abc5','#8a89a6','#766888','#6b486b']))
+            .externalLabels(2);
 
         modeGroupChart
             .width(300)
             .height(250)
+            .radius(100)
+            .innerRadius(0)
             .dimension(ModeGroupDim)
             .group(numProjectsByModeGroup)
-            .colors(d3.scale.category20b())
-            .elasticX(true)
-            .xAxis().ticks(5);
-
+            .colors(d3.scaleOrdinal(['#98abc5','#8a89a6','#766888','#6b486b']))
+            .externalLabels(2);
 
         dc.renderAll();
 
