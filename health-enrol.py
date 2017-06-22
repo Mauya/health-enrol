@@ -13,9 +13,9 @@ COLLECTION_NAME = 'projects'
 FIELDS = {
     'Academic_Year': True,
     'Course': True,
-    'Stage_code': True,
+    'Stage_Code': True,
     'Withdrawals': True,
-    'course_stage': True,
+    'Course_Stage': True,
     'Mode_Group': True,
     'Level_Group': True,
     'Fees_Status': True,

@@ -39,9 +39,9 @@ function makeGraphs(error, projectsJson) {
         var FeesDim = ndx.dimension(function (d) {
             return d["Fees_Status"];
         });
-        // var GenderDim = ndx.dimension(function (d) {
-        //     return d["Gender"];
-        // });
+        var GenderDim = ndx.dimension(function (d) {
+            return d["Gender"];
+        });
         // var AgeDim = ndx.dimension(function (d) {
         //     return d["Age"];
         // });
@@ -75,6 +75,19 @@ function makeGraphs(error, projectsJson) {
         var numProjectsByLevelGroup = LevelGroupDim.group();
         var numProjectsByModeGroup = ModeGroupDim.group();
         var numProjectsByCourseStage = CourseStageDim.group();
+        var numProjectsByGender = GenderDim.group();
+
+        function save_first_order() {
+            var original_value = {};
+            return function(chart) {
+                chart.group().all().forEach(function(kv) {
+                    original_value[kv.key] = kv.value;
+                 });
+                chart.ordering(function(kv) {
+                    return -original_value[kv.key];
+                });
+            };
+        }
 
 
     //all
@@ -93,11 +106,12 @@ function makeGraphs(error, projectsJson) {
         var selectFieldCourse = dc.selectMenu('#menu-select-course');
         var totalEnrolmentsND = dc.numberDisplay('#total-enrolments-nd');
         var totalWithdrawalsND = dc.numberDisplay('#total-withdrawals-nd');
-        var totalEnrolmentChart = dc.barChart("#total-enrolment-chart");
+        var totalEnrolmentChart = dc.lineChart("#total-enrolment-chart");
         var feesStatusChart = dc.pieChart('#fees-status-chart');
-        var levelGroupChart = dc.pieChart("#level-group-chart");
-        var modeGroupChart = dc.pieChart("#mode-group-chart");
+        var levelGroupChart = dc.rowChart("#level-group-chart");
+        var modeGroupChart = dc.rowChart("#mode-group-chart");
         var courseStageChart = dc.pieChart('#course-stage-chart');
+        var genderChart = dc.rowChart('#gender-chart');
 
         //filter
         /*These selectors filter data by:
@@ -149,33 +163,36 @@ function makeGraphs(error, projectsJson) {
             .group(numProjectsByFees);
 
         levelGroupChart
-            .width(250)
+            .width(300)
             .height(200)
-            .radius(80)
-            .innerRadius(0)
-            .transitionDuration(1000)
             .dimension(LevelGroupDim)
             .group(numProjectsByLevelGroup)
-            .colors(d3.scaleOrdinal(['#98abc5','#8a89a6','#766888','#6b486b']))
-            .externalLabels(2);
+            .on('postRender', save_first_order())
+            .xAxis().ticks(5);
 
         modeGroupChart
-            .width(250)
+            .width(300)
             .height(200)
-            .radius(80)
-            .innerRadius(0)
             .dimension(ModeGroupDim)
             .group(numProjectsByModeGroup)
-            .colors(d3.scaleOrdinal(['#98abc5','#8a89a6','#766888','#6b486b']))
-            .externalLabels(2);
+            .on('postRender', save_first_order())
+            .xAxis().ticks(5);
 
         courseStageChart
-            .height(200)
+            .height(250)
             .radius(80)
             .innerRadius(0)
             .transitionDuration(1000)
             .dimension(CourseStageDim)
             .group(numProjectsByCourseStage);
+
+        genderChart
+            .width(250)
+            .height(200)
+            .dimension(GenderDim)
+            .group(numProjectsByGender)
+            .xAxis().ticks(5);
+
 
 
         dc.renderAll();
