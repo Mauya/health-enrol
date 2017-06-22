@@ -42,9 +42,9 @@ function makeGraphs(error, projectsJson) {
         var GenderDim = ndx.dimension(function (d) {
             return d["Gender"];
         });
-        // var AgeDim = ndx.dimension(function (d) {
-        //     return d["Age"];
-        // });
+        var AgeDim = ndx.dimension(function (d) {
+            return d["Age"];
+        });
         // var WhiteBMEDim = ndx.dimension(function (d) {
         //     return d["White_BME"];
         // });
@@ -76,6 +76,7 @@ function makeGraphs(error, projectsJson) {
         var numProjectsByModeGroup = ModeGroupDim.group();
         var numProjectsByCourseStage = CourseStageDim.group();
         var numProjectsByGender = GenderDim.group();
+        var numProjectsByAge = AgeDim.group();
 
         function save_first_order() {
             var original_value = {};
@@ -112,6 +113,7 @@ function makeGraphs(error, projectsJson) {
         var modeGroupChart = dc.rowChart("#mode-group-chart");
         var courseStageChart = dc.pieChart('#course-stage-chart');
         var genderChart = dc.rowChart('#gender-chart');
+        var ageChart = dc.rowChart('#age-chart');
 
         //filter
         /*These selectors filter data by:
@@ -191,9 +193,14 @@ function makeGraphs(error, projectsJson) {
             .height(200)
             .dimension(GenderDim)
             .group(numProjectsByGender)
-            .xAxis().ticks(5);
+            .xAxis().ticks(4);
 
-
+        ageChart
+            .width(250)
+            .height(200)
+            .dimension(AgeDim)
+            .group(numProjectsByAge)
+            .xAxis().ticks(4);
 
         dc.renderAll();
 
