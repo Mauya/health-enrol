@@ -21,9 +21,9 @@ function makeGraphs(error, projectsJson) {
     var CourseNameDim = ndx.dimension(function (d) {
         return d["Course"];
     });
-    // var CourseStageDim = ndx.dimension(function (d) {
-    //     return d["Course_Stage"];
-    // });
+    var CourseStageDim = ndx.dimension(function (d) {
+        return d["Course_Stage"];
+    });
         var ModeGroupDim = ndx.dimension(function (d) {
             return d["Mode_Group"];
         });
@@ -33,9 +33,9 @@ function makeGraphs(error, projectsJson) {
     // var ReasonForLeavingDim = ndx.dimension(function (d) {
     //     return d["Reason_For_Leaving"];
     // });
-        var EnrolmentsDim = ndx.dimension(function (d) {
-           return d["Enrolments"];
-       });
+    //     var EnrolmentsDim = ndx.dimension(function (d) {
+    //        return d["Enrolments"];
+    //    });
         var FeesDim = ndx.dimension(function (d) {
             return d["Fees_Status"];
         });
@@ -57,9 +57,9 @@ function makeGraphs(error, projectsJson) {
         // var DisabilityDim = ndx.dimension(function (d) {
         //     return d["Disability_YN"];
         // });
-        var WithdrawalsDim = ndx.dimension(function (d) {
-            return d["Withdrawals"];
-        });
+        // var WithdrawalsDim = ndx.dimension(function (d) {
+        //     return d["Withdrawals"];
+        // });
 
 
 // Groups- calculate metrics
@@ -74,6 +74,7 @@ function makeGraphs(error, projectsJson) {
         var numProjectsByFees = FeesDim.group();
         var numProjectsByLevelGroup = LevelGroupDim.group();
         var numProjectsByModeGroup = ModeGroupDim.group();
+        var numProjectsByCourseStage = CourseStageDim.group();
 
 
     //all
@@ -96,6 +97,7 @@ function makeGraphs(error, projectsJson) {
         var feesStatusChart = dc.pieChart('#fees-status-chart');
         var levelGroupChart = dc.pieChart("#level-group-chart");
         var modeGroupChart = dc.pieChart("#mode-group-chart");
+        var courseStageChart = dc.pieChart('#course-stage-chart');
 
         //filter
         /*These selectors filter data by:
@@ -147,9 +149,9 @@ function makeGraphs(error, projectsJson) {
             .group(numProjectsByFees);
 
         levelGroupChart
-            .width(300)
-            .height(250)
-            .radius(100)
+            .width(250)
+            .height(200)
+            .radius(80)
             .innerRadius(0)
             .transitionDuration(1000)
             .dimension(LevelGroupDim)
@@ -158,14 +160,23 @@ function makeGraphs(error, projectsJson) {
             .externalLabels(2);
 
         modeGroupChart
-            .width(300)
-            .height(250)
-            .radius(100)
+            .width(250)
+            .height(200)
+            .radius(80)
             .innerRadius(0)
             .dimension(ModeGroupDim)
             .group(numProjectsByModeGroup)
             .colors(d3.scaleOrdinal(['#98abc5','#8a89a6','#766888','#6b486b']))
             .externalLabels(2);
+
+        courseStageChart
+            .height(200)
+            .radius(80)
+            .innerRadius(0)
+            .transitionDuration(1000)
+            .dimension(CourseStageDim)
+            .group(numProjectsByCourseStage);
+
 
         dc.renderAll();
 
