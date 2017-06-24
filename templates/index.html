@@ -12,22 +12,21 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="./">Enrolment Dashboard</a>
-
-                <ul class="nav navbar-nav">
-                  <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
-                  <li><a href="{{ url_for('dash') }}">Dashboard</a></li>
-                </ul>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
+              <li><a href="{{ url_for('dash') }}">Dashboard</a></li>
+            </ul>
                 <ul class = "nav navbar-nav navbar-right">
                     <li><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a></li>
                 </ul>
-            </div>
         </div>
     </nav>
 
-<div class="container">
-   {% block content %}
-   {% endblock %}
-</div>
+    <div class="container">
+       {% block content %}
+       {% endblock %}
+    </div>
   <script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
   <script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>
   <script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>

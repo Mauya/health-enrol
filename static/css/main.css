@@ -16,7 +16,6 @@ body {
    margin: 0;
    font-size: 1.4em;
    color: #fff;
-   text-transform: uppercase;
    float: left;
 }
 header h1.logo:hover {
@@ -74,20 +73,10 @@ h3 {
    text-decoration: none;
 }
 /* Charts */
-.chart-wrapper{
-    min-height:250px;
-    overflow: hidden;
-    padding: 5px;
-    position: relative;
-}
-.chart-title h5{
-    text-align: center;
-}
-
 .dc-chart {
    font-family: Helvetica, Arial, sans-serif;
    font-weight: normal;
-   font-size: 11px;
+   font-size: 12px;
    padding-bottom: 12px;
 }
 
