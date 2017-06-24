@@ -48,15 +48,15 @@ function makeGraphs(error, projectsJson) {
         // var WhiteBMEDim = ndx.dimension(function (d) {
         //     return d["White_BME"];
         // });
-        // var EthnicityGroupDim = ndx.dimension(function (d) {
-        //     return d["Ethnicity_Group"];
-        // });
+        var EthnicityGroupDim = ndx.dimension(function (d) {
+            return d["Ethnicity_Group"];
+        });
         // var DisabilityDescriptionDim = ndx.dimension(function (d) {
         //     return d["Disability_Description"];
         // });
-        // var DisabilityDim = ndx.dimension(function (d) {
-        //     return d["Disability_YN"];
-        // });
+        var DisabilityDim = ndx.dimension(function (d) {
+            return d["Disability_YN"];
+        });
         // var WithdrawalsDim = ndx.dimension(function (d) {
         //     return d["Withdrawals"];
         // });
@@ -77,6 +77,8 @@ function makeGraphs(error, projectsJson) {
         var numProjectsByCourseStage = CourseStageDim.group();
         var numProjectsByGender = GenderDim.group();
         var numProjectsByAge = AgeDim.group();
+        var numProjectsByEthnicityGroup = EthnicityGroupDim.group();
+        var numProjectsByDisability = DisabilityDim.group();
 
         function save_first_order() {
             var original_value = {};
@@ -114,6 +116,8 @@ function makeGraphs(error, projectsJson) {
         var courseStageChart = dc.pieChart('#course-stage-chart');
         var genderChart = dc.rowChart('#gender-chart');
         var ageChart = dc.rowChart('#age-chart');
+        var ethnicityChart = dc.rowChart('#ethnicity-description-chart');
+        var disabilityChart = dc.rowChart('#disability-chart');
 
         //filter
         /*These selectors filter data by:
@@ -149,7 +153,7 @@ function makeGraphs(error, projectsJson) {
             .height(250)
             .dimension(dateDim)
             .group(numProjectsByDate)
-            .x(d3.scale.ordinal().domain(dateDim).range(2013, 2017)) // Need the empty val to offset the first value
+            .x(d3.scale.ordinal().domain(dateDim).range(2013, 2017))
             .xUnits(dc.units.ordinal)// Tell Dc.js that we're using an ordinal x axis
             .xAxis().ticks(5);
 
@@ -200,7 +204,22 @@ function makeGraphs(error, projectsJson) {
             .height(200)
             .dimension(AgeDim)
             .group(numProjectsByAge)
-            .xAxis().ticks(4);
+            .xAxis().ticks(3);
+
+        ethnicityChart
+            .width(250)
+            .height(200)
+            .dimension(EthnicityGroupDim)
+            .group(numProjectsByEthnicityGroup)
+            .xAxis().ticks(3);
+
+        disabilityChart
+            .width(250)
+            .height(200)
+            .dimension(DisabilityDim)
+            .group(numProjectsByDisability)
+            .xAxis().ticks(3);
+
 
         dc.renderAll();
 

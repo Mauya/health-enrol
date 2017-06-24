@@ -7,9 +7,8 @@ body {
 /* Create light red background header with a white logo */
 .navbar-header {
    background-color: #2B2B2B;
-   height: 100px;
+   height: 35px;
    width: 100%;
-   opacity: .9;
    margin-bottom: 10px;
 }
 .navbar-brand {
@@ -70,6 +69,12 @@ h3 {
    text-decoration: none;
 }
 /* Charts */
+.chart-wrapper{
+    min-height:250px;
+    overflow: hidden;
+    padding: 5px;
+    position: relative;
+}
 
 .dc-chart {
    font-family: Helvetica, Arial, sans-serif;
