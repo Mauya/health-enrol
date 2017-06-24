@@ -1,19 +1,20 @@
+/* Center the body content */
 body {
    margin: 0;
    padding: 0;
    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
    color: #ffffff;
+    background-color: #ce8483;
 }
 /* Create light red background header with a white logo */
 .navbar-header {
    background-color: #2B2B2B;
-   height: 35px;
+   height: 40px;
    width: 100%;
-   margin-bottom: 10px;
 }
 .navbar-brand {
    margin: 0;
-   font-size: 2.4em;
+   font-size: 1.4em;
    color: #fff;
    text-transform: uppercase;
    float: left;
@@ -22,25 +23,30 @@ header h1.logo:hover {
    color: #fff;
    text-decoration: none;
 }
-/* Center the body content */
-.container {
-   width: 100%;
-   margin: 0 auto;
+*{
+    box-sizing: border-box;
 }
 div.jumbo {
    padding: 10px 0 30px 0;
    background-color: #ff6666;
-    color: #ffffff;
+    color: #000000;
    -webkit-border-radius: 6px;
    -moz-border-radius: 6px;
    border-radius: 6px;
+}.btn-default{
+    background-color: #1a1a1a;
+    color: #ffffff;
+ }
+
+div{
+    display: block;
 }
 h2 {
-   font-size: 3em;
+   font-size: 2.6em;
    margin-top: 40px;
    text-align: center;
    letter-spacing: -2px;
-   color: #ffffff;
+    font-family: cursive;
 }
 h3 {
    font-size: 1.7em;
@@ -48,7 +54,6 @@ h3 {
    margin-top: 30px;
    text-align: center;
    letter-spacing: -1px;
-   color: #999;
 }
 
 /*
@@ -74,6 +79,9 @@ h3 {
     overflow: hidden;
     padding: 5px;
     position: relative;
+}
+.chart-title h5{
+    text-align: center;
 }
 
 .dc-chart {
@@ -138,16 +146,16 @@ body.application,
   font-family: sans-serif;
 }
 
-.big-numbers {
-    position: relative;
-    font-size: 36px;
-    letter-spacing: -1px;
-    color: #1a1a1a;
-    vertical-align: middle;
-    text-align: center;
-    padding-top: 12px;
-    padding-bottom: 0;
-}
+/*.big-numbers {*/
+    /*position: relative;*/
+    /*font-size: 36px;*/
+    /*letter-spacing: -1px;*/
+    /*color: #1a1a1a;*/
+    /*vertical-align: middle;*/
+    /*text-align: center;*/
+    /*padding-top: 12px;*/
+    /*padding-bottom: 0;*/
+/*}*/
 
 .dc-chart .node {
     font-size: 1em;
@@ -206,4 +214,5 @@ body.application .navbar-inverse, .keen-dashboard .navbar-inverse {
 
 #fees-status-chart{
     color: #000000;
+    margin: auto;
 }
