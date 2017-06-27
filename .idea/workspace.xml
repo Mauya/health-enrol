@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e2994563-a1fc-4bf7-b570-0c0228708b9b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/main.css" afterPath="$PROJECT_DIR$/static/css/main.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -496,13 +495,6 @@
       <option name="presentableId" value="Default" />
       <updated>1496344656972</updated>
     </task>
-    <task id="LOCAL-00014" summary="added two page nav in Index.">
-      <created>1496869784122</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1496869784122</updated>
-    </task>
     <task id="LOCAL-00015" summary="added two page nav in Index.">
       <created>1496870676595</created>
       <option name="number" value="00015" />
@@ -839,7 +831,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498595578958</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="added h2 styling">
+      <created>1498596681370</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1498596681370</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -905,7 +904,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="INCLUDE_TEXT_INTO_SHELF" value="true" />
-    <MESSAGE value="updated html section for number display" />
     <MESSAGE value="defined number fields" />
     <MESSAGE value="removing duplicates  in data definition" />
     <MESSAGE value="updated graph file" />
@@ -930,7 +928,8 @@
     <MESSAGE value="added h5 for  chart titles  and chart wrapper styles" />
     <MESSAGE value="adding styles to index and home page" />
     <MESSAGE value="updated the home page with intros" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated the home page with intros" />
+    <MESSAGE value="added h2 styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="added h2 styling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
