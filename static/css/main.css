@@ -18,17 +18,10 @@ body {
    color: #fff;
    float: left;
 }
-header h1.logo:hover {
-   color: #fff;
-   text-decoration: none;
-}
-*{
-    box-sizing: border-box;
-}
 div.jumbo {
    padding: 10px 0 30px 0;
    background-color: #ff6666;
-    color: #000000;
+    color: #fff;
    -webkit-border-radius: 6px;
    -moz-border-radius: 6px;
    border-radius: 6px;
