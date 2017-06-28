@@ -4,9 +4,9 @@ body {
    padding: 0;
    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
    color: #fff;
-   /*background-image: url(http://i.imgur.com/tCg0QKY.jpg);*/
+   background-color: #cccccc;
 }
-/* Create light red background header with a white logo */
+/*create a dark navbar with inverse*/
 .navbar-header {
    background-color: #2B2B2B;
    height: 40px;
@@ -17,7 +17,7 @@ body {
    color: #fff;
    float: left;
 }
-div.jumbo {
+.jumbo {
    padding: 20px;
    margin: auto;
    width: 80%;
@@ -48,22 +48,13 @@ h3 {
    text-align: center;
    letter-spacing: -1px;
 }
-
+.container{
+    display: flex;
+    flex-direction: row;
+}
 
 
 /* Charts */
-.dc-chart {
-   font-family: Helvetica, Arial, sans-serif;
-   font-weight: normal;
-   font-size: 12px;
-   padding-bottom: 12px;
-}
-
-.dc-chart g.row text {
-   fill: black;
-   font-size: 12px;
-   color: #1a1a1a;
-}
 
 .dc-select-menu {
    background-color: rgba(48,59,69, 0.95);
@@ -88,14 +79,6 @@ h3 {
 .dc-legend {
     font-size: 10px;
 }
-
-body.application,
-.keen-dashboard {
-  background: #fff;
-  font-family: Helvetica, Arial, sans-serif;
-  padding: 60px 20px 0;
-}
-
 .chart-wrapper {
   background: #fff;
   border: 1px solid #fff;
@@ -105,40 +88,13 @@ body.application,
 
 .chart-wrapper .chart-title {
   border-bottom: 1px  #333;
-  background-color: #800000;
-  color: #fff;
+  background-color: #669999;
+  color: #000;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
   padding: 7px 10px 4px;
-  font-family: sans-serif;
-}
-
-.dc-chart .node {
-    font-size: 1em;
-    cursor: pointer;
-}
-
-#row-selection {
-   font-family: Helvetica, Arial, sans-serif;
-   font-weight: 300;
-   font-size: 14px;
-   color: #fff;
-}
-
-body.application .navbar-inverse .navbar-nav > li > a,
-body.application .navbar .navbar-brand,
-.keen-dashboard .navbar-inverse .navbar-nav > li > a,
-.keen-dashboard .navbar .navbar-brand {
-  color: #fff;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  text-decoration: none;
-  letter-spacing: -0.2px;
-}
-
-body.application .navbar-inverse, .keen-dashboard .navbar-inverse {
-    background-color: rgba(48,59,69, 0.95);
+  margin: auto;
 }
 
 /*styling charts*/
