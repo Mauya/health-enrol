@@ -185,7 +185,7 @@ function makeGraphs(error, projectsJson) {
             .xAxis().ticks(5);
 
         courseStageChart
-            .height(250)
+            .height(200)
             .radius(80)
             .innerRadius(0)
             .transitionDuration(1000)

@@ -23,10 +23,17 @@
         </div>
     </nav>
 
-    <div class="container">
-       {% block content %}
-       {% endblock %}
+    {% block content %}
+    {% endblock %}
+
+    <hr />
+
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <p><small class="sign">By Sandra Kadungure 2017.</small></p>
+      </div>
     </div>
+
   <script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
   <script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>
   <script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>

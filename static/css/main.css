@@ -14,27 +14,26 @@ body {
 }
 .navbar-brand {
    margin: 0;
-   font-size: 1.7em;
    color: #fff;
    float: left;
 }
 div.jumbo {
-   padding: 10px 0 30px 0;
-   background-color: #ff6666;
-    color: #fff;
+   padding: 20px;
+   width: 80%;
+   background-color: #669999;
+    color: #000;
     font-size: 1.2em;
    -webkit-border-radius: 6px;
    -moz-border-radius: 6px;
    border-radius: 6px;
-    padding: 20px;
-}.btn-default{
+}
+.btn-default{
     background-color: #1a1a1a;
     color: #ffffff;
+    font-weight: bolder;
+    margin-left: 108px;
  }
 
-div{
-    display: block;
-}
 h2 {
    font-size: 2.6em;
    margin-top: 20px;
@@ -50,23 +49,8 @@ h3 {
    letter-spacing: -1px;
 }
 
-/*
-* Display navigation links inline
-*/
-.menu {
-   float: right;
-   margin-top: 8px;
-}
-.menu li {
-   display: inline;
-}
-.menu li + li {
-   margin-left: 35px;
-}
-.menu li a {
-   color: #999;
-   text-decoration: none;
-}
+
+
 /* Charts */
 .dc-chart {
    font-family: Helvetica, Arial, sans-serif;
@@ -120,26 +104,15 @@ body.application,
 }
 
 .chart-wrapper .chart-title {
-  border-bottom: 1px  #aaa;
-  background-color: #f7f7f7;
-  color: #1a1a1a;
-  font-size: 12px;
+  border-bottom: 1px  #333;
+  background-color: #800000;
+  color: #fff;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
   padding: 7px 10px 4px;
   font-family: sans-serif;
 }
-
-/*.big-numbers {*/
-    /*position: relative;*/
-    /*font-size: 36px;*/
-    /*letter-spacing: -1px;*/
-    /*color: #1a1a1a;*/
-    /*vertical-align: middle;*/
-    /*text-align: center;*/
-    /*padding-top: 12px;*/
-    /*padding-bottom: 0;*/
-/*}*/
 
 .dc-chart .node {
     font-size: 1em;
