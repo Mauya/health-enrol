@@ -2,7 +2,7 @@
 {% block content %}
      <div class="container">
         <div class="row">
-            <div class="col-sm-3">
+            <div id="date" class="col-sm-3">
                 <div class="chart-wrapper">
                     <div class="chart-title">
                         <h5>Year</h5>
@@ -12,7 +12,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div id="course" class="col-sm-3">
                 <div class="chart-wrapper">
                     <div class="chart-title">
                         <h5>Course</h5>
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div id="totalEnrol" class="col-sm-3">
                 <div class="chart-wrapper">
                     <div class="chart-title">
                         <h5>Total Enrolments</h5>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div id="withdrawals" class="col-sm-3">
                 <div class="chart-wrapper">
                     <div class="chart-title">
                         <h5>Total Withdrawals</h5>
@@ -45,7 +45,7 @@
         </div>
             <!-- Metric 1 -->
         <div class="row">
-            <div class="col-sm-6">
+            <div id="trend" class="col-sm-6">
                 <div class="chart-wrapper">
                     <div class="chart-title">
                         <h5>Total Enrolment Trends</h5>
@@ -57,7 +57,7 @@
             </div>
             <!-- Metric 1 -->
             <!-- Metric 2 -->
-            <div class="col-sm-6">
+            <div id="feeStatus" class="col-sm-6">
                 <div class="chart-wrapper">
                     <div class="chart-title">
                         <h5>Enrolment by Fee Status</h5>
@@ -70,7 +70,7 @@
         </div>
          <!-- Metric 2 -->
          <div class="row">
-          <div id=annual-enrol class="col-sm-4">
+          <div id="level" class="col-sm-4">
             <div class="chart-wrapper">
               <div class="chart-title">
                   <h5>Enrolments by Level Group</h5>
@@ -82,7 +82,7 @@
           </div>
           <!-- Time Chart -->
             <!-- course-stage Pie -->
-          <div class="col-sm-4">
+          <div id="mode" class="col-sm-4">
             <div class="chart-wrapper">
               <div class="chart-title">
                   <h5>Enrolment By Mode Group</h5>
@@ -93,7 +93,7 @@
              </div>
            </div>
               <!-- course-stage Pie -->
-          <div class="col-sm-4">
+          <div id="stage" class="col-sm-4">
             <div class="chart-wrapper">
               <div class="chart-title">
                   <h5>Enrolment By course stage</h5>
@@ -104,8 +104,7 @@
              </div>
            </div>
         </div>
-
-            <!--Faculty enrolment Profile -->
+         <!--Faculty enrolment Profile -->
         <div class="row">
           <div id="gender" class="col-sm-3">
             <div class="chart-wrapper" data-step="6">
