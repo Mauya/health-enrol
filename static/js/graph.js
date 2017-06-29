@@ -112,7 +112,7 @@ function makeGraphs(error, projectsJson) {
         var totalEnrolmentChart = dc.lineChart("#total-enrolment-chart");
         var feesStatusChart = dc.pieChart('#fees-status-chart');
         var levelGroupChart = dc.rowChart("#level-group-chart");
-        var modeGroupChart = dc.rowChart("#mode-group-chart");
+        var modeGroupChart = dc.pieChart("#mode-group-chart");
         var courseStageChart = dc.pieChart('#course-stage-chart');
         var genderChart = dc.rowChart('#gender-chart');
         var ageChart = dc.rowChart('#age-chart');
@@ -163,7 +163,6 @@ function makeGraphs(error, projectsJson) {
             .radius(100)
             .innerRadius(0)
             .transitionDuration(1000)
-            .externalLabels(1)
             .legend(dc.legend())
             .dimension(FeesDim)
             .group(numProjectsByFees);
@@ -177,12 +176,12 @@ function makeGraphs(error, projectsJson) {
             .xAxis().ticks(5);
 
         modeGroupChart
-            .width(300)
             .height(200)
+            .radius(80)
+            .innerRadius(0)
+            .transitionDuration(1000)
             .dimension(ModeGroupDim)
-            .group(numProjectsByModeGroup)
-            .on('postRender', save_first_order())
-            .xAxis().ticks(5);
+            .group(numProjectsByModeGroup);
 
         courseStageChart
             .height(200)
