@@ -58,6 +58,7 @@ function makeGraphs(error, projectsJson) {
 
 // Groups- calculate metrics
         var numProjectsByDate = dateDim.group();
+        var year_total = dateDim.group().reduceSum(function(d) {return d['Enrolments']});
         var numProjectsByCourseName = CourseNameDim.group();
         var numProjectsByEnrolments = ndx.groupAll().reduceSum(function (d) {
             return d["Enrolments"];
@@ -146,24 +147,30 @@ function makeGraphs(error, projectsJson) {
             .width(500)
             .height(250)
             .dimension(dateDim)
-            .group(numProjectsByEnrolments)
-            .x(d3.scale.ordinal().domain(dateDim))
+            .group(year_total)
+            .x(d3.scale.ordinal().domain(["2013","2014","2015","2016","2017"]))
+            .y(d3.scale.linear().domain([0, 12000]))
+            .brushOn(false)
+            .elasticX(true)
             .xUnits(dc.units.ordinal)// Tell Dc.js that we're using an ordinal x axis
             .xAxis().ticks(5)
             .xAxisLabel('Date')
             .yAxisLabel('Total Enrolment');
 
         feesStatusChart
-            .width(300)
+            .width(250)
             .height(250)
-            .radius(100)
+            .radius(200)
             .innerRadius(0)
             .slicesCap(4)
-            .transitionDuration(1000)
+            .transitionDuration(500)
             .legend(dc.legend())
             .dimension(FeesDim)
             .group(numProjectsByFees)
-            .colors(["#006699","#B21400","#0099cc","#006699"]);
+            .colors(["#006699","#B21400","#0099cc","#006699"])
+            .externalLabels(40)
+            .externalRadiusPadding(50)
+            .minAngleForLabel(0);
 
         levelGroupChart
             .height(200)
@@ -219,9 +226,8 @@ function makeGraphs(error, projectsJson) {
             .dimension(DisabilityDim)
             .group(numProjectsByDisability)
             .yAxisLabel("Disability")
-            .xAxis().ticks(3);
+            .xAxis().ticks(5);
 
         dc.renderAll();
-
 }
 
