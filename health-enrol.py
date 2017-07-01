@@ -21,7 +21,7 @@ FIELDS = {
     'Fees_Status': True,
     'Gender': True,
     'Ethnicity_Group': True,
-    'White/BME': True,
+    'White_BME': True,
     'Disability_description': True,
     'Disability_YN': True,
     'Age': True,

@@ -14,19 +14,16 @@ body {
    width: 100%;
 }
 .jumbo {
+    margin: 0 auto;
+    border: 2px solid black;
+    width: 80%;
    padding-left: 40px;
-    margin: auto;
     background-color: #669999;
     color: #000;
     font-size: 1.2em;
    -webkit-border-radius: 6px;
    -moz-border-radius: 6px;
-   border-radius: 6px;
-
-}
-.jumbo.col-sm-8{
-    margin: auto;
-   width: 80%;
+   border-radius: 8px;
 }
 .btn-default{
     background-color: #1a1a1a;
@@ -83,6 +80,7 @@ h5 {
   background-color: #669999;
   color: #000;
   font-size: 14px;
+  text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0;
   padding: 7px 10px 4px;
@@ -97,7 +95,7 @@ h5 {
     width: 200px;
     font-size: 20px;
     margin-left: 40px;
-    background-color: #66978a;
+    background-color: #339966;
     color: #ffffff;
 }
 
@@ -105,10 +103,9 @@ h5 {
     width: 200px;
     margin-left: 40px;
     font-size: 40px;
-    background-color: #66978a;
+    background-color: #339966;
     color: #ffffff;
 }
-
 #total-withdrawals-nd{
     width: 200px;
     margin-left: 40px;
@@ -117,7 +114,12 @@ h5 {
     color: #ffffff;
 }
 
-#fees-status-chart{
+#fees-status-chart {
     color: #000000;
     margin: auto;
 }
+#total-enrolment-chart{
+    stroke-width: 5px;
+    fill: #ff3300;
+}
+

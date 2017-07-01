@@ -105,7 +105,7 @@ function makeGraphs(error, projectsJson) {
         var totalWithdrawalsND = dc.numberDisplay('#total-withdrawals-nd');
         var totalEnrolmentChart = dc.lineChart("#total-enrolment-chart");
         var feesStatusChart = dc.pieChart('#fees-status-chart');
-        var levelGroupChart = dc.rowChart("#level-group-chart");
+        var levelGroupChart = dc.pieChart("#level-group-chart");
         var modeGroupChart = dc.pieChart("#mode-group-chart");
         var courseStageChart = dc.pieChart('#course-stage-chart');
         var genderChart = dc.rowChart('#gender-chart');
@@ -147,7 +147,7 @@ function makeGraphs(error, projectsJson) {
             .height(250)
             .dimension(dateDim)
             .group(numProjectsByDate)
-            .x(d3.scale.ordinal().domain(dateDim).range(2013, 2017))
+            .x(d3.scale.ordinal().domain(dateDim))
             .xUnits(dc.units.ordinal)// Tell Dc.js that we're using an ordinal x axis
             .xAxis().ticks(5);
 
@@ -187,32 +187,35 @@ function makeGraphs(error, projectsJson) {
 
         genderChart
             .width(250)
-            .height(200)
+            .height(150)
             .dimension(GenderDim)
             .group(numProjectsByGender)
-            .xAxis().ticks(4);
+            .yAxisLabel("Gender")
+            .xAxis().ticks(3);
 
         ageChart
             .width(250)
             .height(200)
             .dimension(AgeDim)
             .group(numProjectsByAge)
-            .xAxis().ticks(4);
+            .xAxis().ticks(3)
+            .yAxisLabel("Age");
 
         ethnicityChart
             .width(250)
             .height(200)
             .dimension(WhiteBMEDim)
             .group(numProjectsByWhiteBME)
-            .xAxis().ticks(4);
+            .yAxisLabel("Ethnicity")
+            .xAxis().ticks(3);
 
         disabilityChart
             .width(250)
             .height(200)
             .dimension(DisabilityDim)
             .group(numProjectsByDisability)
-            .xAxis().ticks(5);
-
+            .yAxisLabel("Disability")
+            .xAxis().ticks(3);
 
         dc.renderAll();
 
