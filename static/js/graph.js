@@ -146,20 +146,24 @@ function makeGraphs(error, projectsJson) {
             .width(500)
             .height(250)
             .dimension(dateDim)
-            .group(numProjectsByDate)
+            .group(numProjectsByEnrolments)
             .x(d3.scale.ordinal().domain(dateDim))
             .xUnits(dc.units.ordinal)// Tell Dc.js that we're using an ordinal x axis
-            .xAxis().ticks(5);
+            .xAxis().ticks(5)
+            .xAxisLabel('Date')
+            .yAxisLabel('Total Enrolment');
 
         feesStatusChart
             .width(300)
             .height(250)
             .radius(100)
             .innerRadius(0)
+            .slicesCap(4)
             .transitionDuration(1000)
             .legend(dc.legend())
             .dimension(FeesDim)
-            .group(numProjectsByFees);
+            .group(numProjectsByFees)
+            .colors(["#006699","#B21400","#0099cc","#006699"]);
 
         levelGroupChart
             .height(200)
