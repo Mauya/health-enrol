@@ -45,15 +45,9 @@ function makeGraphs(error, projectsJson) {
         var AgeDim = ndx.dimension(function (d) {
             return d["Age"];
         });
-        // var WhiteBMEDim = ndx.dimension(function (d) {
-        //     return d["White_BME"];
-        // });
-        var EthnicityGroupDim = ndx.dimension(function (d) {
-            return d["Ethnicity_Group"];
+        var WhiteBMEDim = ndx.dimension(function (d) {
+            return d["White_BME"];
         });
-        // var DisabilityDescriptionDim = ndx.dimension(function (d) {
-        //     return d["Disability_Description"];
-        // });
         var DisabilityDim = ndx.dimension(function (d) {
             return d["Disability_YN"];
         });
@@ -77,7 +71,7 @@ function makeGraphs(error, projectsJson) {
         var numProjectsByCourseStage = CourseStageDim.group();
         var numProjectsByGender = GenderDim.group();
         var numProjectsByAge = AgeDim.group();
-        var numProjectsByEthnicityGroup = EthnicityGroupDim.group();
+        var numProjectsByWhiteBME = WhiteBMEDim.group();
         var numProjectsByDisability = DisabilityDim.group();
 
         function save_first_order() {
@@ -116,7 +110,7 @@ function makeGraphs(error, projectsJson) {
         var courseStageChart = dc.pieChart('#course-stage-chart');
         var genderChart = dc.rowChart('#gender-chart');
         var ageChart = dc.rowChart('#age-chart');
-        var ethnicityChart = dc.rowChart('#ethnicity-description-chart');
+        var ethnicityChart = dc.rowChart('#ethnicity-chart');
         var disabilityChart = dc.rowChart('#disability-chart');
 
         //filter
@@ -168,12 +162,12 @@ function makeGraphs(error, projectsJson) {
             .group(numProjectsByFees);
 
         levelGroupChart
-            .width(300)
             .height(200)
+            .radius(80)
+            .innerRadius(0)
             .dimension(LevelGroupDim)
-            .group(numProjectsByLevelGroup)
-            .on('postRender', save_first_order())
-            .xAxis().ticks(5);
+            .group(numProjectsByLevelGroup);
+
 
         modeGroupChart
             .height(200)
@@ -203,21 +197,21 @@ function makeGraphs(error, projectsJson) {
             .height(200)
             .dimension(AgeDim)
             .group(numProjectsByAge)
-            .xAxis().ticks(3);
+            .xAxis().ticks(4);
 
         ethnicityChart
             .width(250)
             .height(200)
-            .dimension(EthnicityGroupDim)
-            .group(numProjectsByEthnicityGroup)
-            .xAxis().ticks(3);
+            .dimension(WhiteBMEDim)
+            .group(numProjectsByWhiteBME)
+            .xAxis().ticks(4);
 
         disabilityChart
             .width(250)
             .height(200)
             .dimension(DisabilityDim)
             .group(numProjectsByDisability)
-            .xAxis().ticks(3);
+            .xAxis().ticks(5);
 
 
         dc.renderAll();
