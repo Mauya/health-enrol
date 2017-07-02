@@ -7,26 +7,26 @@ The faculty of Health dashboard contains interactive charts and graphs based on 
 The downloaded data is converted into a CSV file. The file is then imported into a MongoDB as a csv file using this command:
 
 ```mongoimport -d FOHealth -c projects --type csv --file C:\Users\User\Desktop\FOH\healthEnrolData.csv --headerline``` to create a database and a collection
+
 ### Requirements
-* Use school of Health(University of Northampton) enrolment data to aid in their international and national student recruitment insight programme.
-* Analysis will be done to create the dashboard (Sum, count and list)
+* Use school of Health(University of Northampton) enrolment data for international and national student recruitment insight programme.
 * Use Python Flask micro Framework which include standard folder static and templates.
-* Create a two page application
+* Create a two page application, introduction and dashboard page
 * The data as a true reflection of data stored in the student records and downloaded and stored in MongoDB
 * Dashboard need dc.js, d3.js, crossfilter.js (third part js files) to build the front end UI and need also third part css files for styling the graphs and charts
 
 ### Structure
 The structure of the project includes in the the static folder, vendor JavaScript libraries d3.js, dc.js, crossfilter.js etc and css files bootstrap.min.js, dc.css and keen-dashboards.css.
 The main project components include:
-* the graph.js which makes creating charts and graphs easy,
-* health-enrol.py to create routes and data connection, and
-* the HTML templates(index.html, main.html, dash.html) where tables and graphs are displayed
+* **the graph.js** which makes creating charts and graphs easy,
+* **health-enrol.py** to create routes and data connection, and
+* **the HTML templates**(index.html, main.html, dash.html) where tables and graphs are displayed
 
 ### Creating the Dashboard
 * Select  Python flask micro framework for the server and set up virtualenv to ensure other module are easily imported into  [Flask](http://flask.pocoo.org/)
 * set up connection to database, port and collection call is initialised
 * Define field that will be used in the dashboard creation
-* In this analysis the following attributes were used:
+* In this analysis the following attributes/fields are used:
 'Academic_Year': True, 	'Course': True, 	'Stage_Code': True, 	'Withdrawals': True, 	'Course_Stage': True, 	'Mode_Group': True, 	'Level_Group': True, 	'Fees_Status': True, 	'Gender': True, 	'Ethnicity_Group': True, 	'White/BME': True, 	'Disability_description': True, 	'Disability_YN': True, 	'Age': True, 	'Reason_for_Leaving': True, 	'Enrolments': True, 	'_id': False.
 * Define the routes to render the HTML templates
 * Create HTML templates used to structure the dashboard using bootstrap

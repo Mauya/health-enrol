@@ -15,7 +15,6 @@ body {
 }
 .jumbo {
     margin: 0 auto;
-    border: 2px solid black;
     width: 80%;
    padding-left: 40px;
     background-color: #669999;
@@ -75,7 +74,7 @@ h5 {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0;
-  padding: 7px 10px 4px;
+  padding: 5px 10px 4px;
   margin: auto;
 }
 
