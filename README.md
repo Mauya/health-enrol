@@ -1,4 +1,4 @@
-# health-enrol
+# Health-enrolments
 
 # Data Visualisation Stream2 Project
 ### Introduction
@@ -6,8 +6,7 @@ The faculty of Health dashboard contains interactive charts and graphs based on 
 
 The downloaded data is converted into a CSV file. The file is then imported into a MongoDB as a csv file using this command:
 
-```mongoimport -d databasename -c projects --type csv --file sourcefile.csv --headerline  to create a database and a collection```
-
+```mongoimport -d FOHealth -c projects --type csv --file C:\Users\User\Desktop\FOH\healthEnrolData.csv --headerline``` to create a database and a collection
 ### Requirements
 * Use school of Health(University of Northampton) enrolment data to aid in their international and national student recruitment insight programme.
 * Analysis will be done to create the dashboard (Sum, count and list)
@@ -24,7 +23,7 @@ The main project components include:
 * the HTML templates(index.html, main.html, dash.html) where tables and graphs are displayed
 
 ### Creating the Dashboard
-* Select  Python flask micro framework for the server and set up virtualenv to ensure other module imported [Flask](http://flask.pocoo.org/)
+* Select  Python flask micro framework for the server and set up virtualenv to ensure other module are easily imported into  [Flask](http://flask.pocoo.org/)
 * set up connection to database, port and collection call is initialised
 * Define field that will be used in the dashboard creation
 * In this analysis the following attributes were used:
@@ -36,7 +35,7 @@ The main project components include:
 * Connect to the database and extract the data from FOHealth database
 * D3.js - used to render interactive charts based on data. D3 creates svg based charts which are passed into html div blocks, [d3.js](https://d3js.org/).
 * Dc.js -  used as a wrapper for D3.js. This allows to add the basic chart parameters to the code to get them up and running and allows making plotting charts easier [dc.js](https://dc-js.github.io/dc.js/).
-* Crossfilter.js - JavaScript based library used to explore large datasets. In the project used for slicing and dicing FOHealth data. Enables drill down based analysis and two way binding [crossfilter.js](http://square.github.io/crossfilter/).
+* Crossfilter.js - JavaScript based library used to explore large data sets. In this project used for slicing and dicing FOHealth data. Enables drill down based analysis and two way binding [crossfilter.js](http://square.github.io/crossfilter/).
 * queue.js -This function processes data at the API level and insert it into the data variable using the queue library for asynchronous loading. Its job is to wait until the data is available from each API before passing on the combined data for processing. [queue.js](https://github.com/d3/d3-queue)
 * Dc.css - contains the styling directives for our dc charts.
 * keen.js - a dashboard template library. [keen.js](https://keen.io/).
