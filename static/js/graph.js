@@ -75,26 +75,9 @@ function makeGraphs(error, projectsJson) {
         var numProjectsByWhiteBME = WhiteBMEDim.group();
         var numProjectsByDisability = DisabilityDim.group();
 
-        function save_first_order() {
-            var original_value = {};
-            return function(chart) {
-                chart.group().all().forEach(function(kv) {
-                    original_value[kv.key] = kv.value;
-                 });
-                chart.ordering(function(kv) {
-                    return -original_value[kv.key];
-                });
-            };
-        }
-
 
     //all
     //     var all = ndx.groupAll();
-
-
-//     var max_course = totalEnrolmentByCourse.top(1)[0].value;
-//     var minTotalEnrolments = totalEnrolmentsDim.bottom(1)[0]["Enrolments"];
-//     var maxTotalEnrolments = totalEnrolmentsDim.top(1)[0]["Enrolments"];
 
 // Apply DC and D3
 
@@ -153,23 +136,19 @@ function makeGraphs(error, projectsJson) {
             .brushOn(false)
             .elasticX(true)
             .xUnits(dc.units.ordinal)// Tell Dc.js that we're using an ordinal x axis
-            .xAxis().ticks(5)
-            .xAxisLabel('Date')
-            .yAxisLabel('Total Enrolment');
+            .xAxis().ticks(5);
 
         feesStatusChart
             .width(250)
             .height(250)
-            .radius(200)
+            .radius(80)
             .innerRadius(0)
-            .slicesCap(4)
             .transitionDuration(500)
             .legend(dc.legend())
             .dimension(FeesDim)
             .group(numProjectsByFees)
             .colors(["#006699","#B21400","#0099cc","#006699"])
-            .externalLabels(40)
-            .externalRadiusPadding(50)
+            .externalLabels(10)
             .minAngleForLabel(0);
 
         levelGroupChart
@@ -198,10 +177,10 @@ function makeGraphs(error, projectsJson) {
 
         genderChart
             .width(250)
-            .height(150)
+            .height(200)
             .dimension(GenderDim)
             .group(numProjectsByGender)
-            .yAxisLabel("Gender")
+            //.yAxisLabel("Gender")
             .xAxis().ticks(3);
 
         ageChart
@@ -210,14 +189,14 @@ function makeGraphs(error, projectsJson) {
             .dimension(AgeDim)
             .group(numProjectsByAge)
             .xAxis().ticks(3)
-            .yAxisLabel("Age");
+            //.yAxisLabel("Age");
 
         ethnicityChart
             .width(250)
             .height(200)
             .dimension(WhiteBMEDim)
             .group(numProjectsByWhiteBME)
-            .yAxisLabel("Ethnicity")
+            //.yAxisLabel("Ethnicity")
             .xAxis().ticks(3);
 
         disabilityChart
@@ -225,7 +204,7 @@ function makeGraphs(error, projectsJson) {
             .height(200)
             .dimension(DisabilityDim)
             .group(numProjectsByDisability)
-            .yAxisLabel("Disability")
+            //.yAxisLabel("Disability")
             .xAxis().ticks(5);
 
         dc.renderAll();

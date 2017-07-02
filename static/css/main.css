@@ -57,14 +57,6 @@ h5 {
    padding-top: 4px;
    padding-bottom: 0;
 }
-
-.dc-chart .pie-slice {
-    color: #1a1a1a;
-    fill: #fff;
-    font-size: 12px;
-    cursor: pointer;
-}
-
 .dc-legend {
     font-size: 9px;
 }
@@ -79,7 +71,7 @@ h5 {
   border-bottom: 1px  #333;
   background-color: #669999;
   color: #000;
-  font-size: 14px;
+  font-size: 10px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0;
@@ -110,16 +102,12 @@ h5 {
     width: 200px;
     margin-left: 40px;
     font-size: 40px;
-    background-color: #66978a;
+    background-color: #339966;
     color: #ffffff;
 }
 
 .chart-stage {
     color: #000000;
     margin: auto;
-}
-#total-enrolment-chart{
-    stroke-width: 5px;
-    fill: #ff3300;
 }
 
