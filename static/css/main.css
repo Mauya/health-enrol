@@ -14,7 +14,7 @@ body {
    width: 100%;
 }
 .jumbo {
-    margin: 0 auto;
+    margin: auto;
     width: 80%;
    padding-left: 40px;
     background-color: #669999;
@@ -57,7 +57,7 @@ h5 {
    padding-bottom: 0;
 }
 .dc-legend {
-    font-size: 9px;
+    font-size: 10px;
 }
 .chart-wrapper {
   background: #fff;
