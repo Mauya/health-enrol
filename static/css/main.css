@@ -10,7 +10,7 @@ body {
 .jumbo {
     margin: auto;
     width: 80%;
-   padding-left: 40px;
+   padding-left: 80px;
     background-color: #669999;
     color: #000;
     font-size: 1.2em;
@@ -86,17 +86,20 @@ h5 {
 
 #total-enrolments-nd {
     width: 200px;
-    margin-left: 40px;
+    margin-left: 30px;
     font-size: 40px;
     background-color: #339966;
     color: #ffffff;
 }
 #total-withdrawals-nd{
     width: 200px;
-    margin-left: 40px;
+    margin-left: 30px;
     font-size: 40px;
     background-color: #339966;
     color: #ffffff;
+}
+#total-enrolment-chart{
+    text-align: center;
 }
 
 .chart-stage {
