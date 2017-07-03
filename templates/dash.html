@@ -1,165 +1,163 @@
 {% extends "index.html" %}
 {% block content %}
-     <div class="container">
-        <div class="row">
-            <div id="date" class="col-sm-3">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        <h5>Year</h5>
-                    </div>
-                    <div class="chart-stage">
-                        <div id="menu-select-academic_year" ></div>
-                    </div>
+    <div class="row">
+        <div id="date" class="col-sm-3">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    <h5>Year</h5>
                 </div>
-            </div>
-            <div id="course" class="col-sm-3">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        <h5>Course</h5>
-                    </div>
-                    <div class="chart-stage">
-                        <div id="menu-select-course"></div>
-                    </div>
-                </div>
-            </div>
-            <div id="totalEnrol" class="col-sm-3">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        <h5>Total Enrolments</h5>
-                    </div>
-                    <div class="chart-stage">
-                        <div id="total-enrolments-nd"></div>
-                    </div>
-                </div>
-            </div>
-            <div id="withdrawals" class="col-sm-3">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        <h5>Total Withdrawals</h5>
-                    </div>
-                    <div class="chart-stage">
-                        <div id="total-withdrawals-nd"></div>
-                    </div>
+                <div class="chart-stage">
+                    <div id="menu-select-academic_year" ></div>
                 </div>
             </div>
         </div>
-            <!-- Metric 1 -->
-        <div class="row">
-            <div id="trend" class="col-sm-8">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        <h5>Total Enrolment Trends</h5>
-                    </div>
-                    <div class="chart-stage">
-                        <div id="total-enrolment-chart"></div>
-                    </div>
+        <div id="course" class="col-sm-3">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    <h5>Course</h5>
                 </div>
-            </div>
-            <!-- Metric 1 -->
-            <!-- Metric 2 -->
-            <div id="feeStatus" class="col-sm-4">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        <h5>Enrolment by Fee Status</h5>
-                    </div>
-                 <div class="chart-stage">
-                    <div id="fees-status-chart"></div>
-                 </div>
+                <div class="chart-stage">
+                    <div id="menu-select-course"></div>
                 </div>
             </div>
         </div>
-         <!-- Metric 2 -->
-         <div class="row">
-          <div id="level" class="col-sm-4">
+        <div id="totalEnrol" class="col-sm-3">
             <div class="chart-wrapper">
-              <div class="chart-title">
-                  <h5>Enrolments by Level Group</h5>
-              </div>
-              <div class="chart-stage">
-                <div id="level-group-chart"></div>
-              </div>
+                <div class="chart-title">
+                    <h5>Total Enrolments</h5>
+                </div>
+                <div class="chart-stage">
+                    <div id="total-enrolments-nd"></div>
+                </div>
             </div>
-          </div>
-          <!-- Time Chart -->
-            <!-- course-stage Pie -->
-          <div id="mode" class="col-sm-4">
+        </div>
+        <div id="withdrawals" class="col-sm-3">
             <div class="chart-wrapper">
-              <div class="chart-title">
-                  <h5>Enrolment By Mode Group</h5>
-              </div>
-              <div class="chart-stage">
-                <div id="mode-group-chart"></div>
-              </div>
+                <div class="chart-title">
+                    <h5>Total Withdrawals</h5>
+                </div>
+                <div class="chart-stage">
+                    <div id="total-withdrawals-nd"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Metric 1 -->
+    <div class="row">
+        <div id="trend" class="col-sm-8">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    <h5>Total Enrolment Trends</h5>
+                </div>
+                <div class="chart-stage">
+                    <div id="total-enrolment-chart"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Metric 1 -->
+        <!-- Metric 2 -->
+        <div id="feeStatus" class="col-sm-4">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    <h5>Enrolment by Fee Status</h5>
+                </div>
+             <div class="chart-stage">
+                <div id="fees-status-chart"></div>
              </div>
-           </div>
-              <!-- course-stage Pie -->
-          <div id="stage" class="col-sm-4">
-            <div class="chart-wrapper">
-              <div class="chart-title">
-                  <h5>Enrolment By course stage</h5>
-              </div>
-              <div class="chart-stage">
-                <div id="course-stage-chart"></div>
-              </div>
-             </div>
-           </div>
+            </div>
         </div>
-         <!--Faculty enrolment Profile -->
-        <div class="row">
-          <div id="gender" class="col-sm-3">
-            <div class="chart-wrapper" data-step="6">
+    </div>
+     <!-- Metric 2 -->
+     <div class="row">
+      <div id="level" class="col-sm-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+              <h5>Enrolments by Level Group</h5>
+          </div>
+          <div class="chart-stage">
+            <div id="level-group-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Time Chart -->
+        <!-- course-stage Pie -->
+      <div id="mode" class="col-sm-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+              <h5>Enrolment By Mode Group</h5>
+          </div>
+          <div class="chart-stage">
+            <div id="mode-group-chart"></div>
+          </div>
+         </div>
+       </div>
+          <!-- course-stage Pie -->
+      <div id="stage" class="col-sm-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+              <h5>Enrolment By course stage</h5>
+          </div>
+          <div class="chart-stage">
+            <div id="course-stage-chart"></div>
+          </div>
+         </div>
+       </div>
+    </div>
+     <!--Faculty enrolment Profile -->
+    <div class="row">
+      <div id="gender" class="col-sm-3">
+        <div class="chart-wrapper" data-step="6">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    <h5>Enrolment By Gender</h5>
+                </div>
+                <div class="chart-stage">
+                    <div id="gender-chart"></div>
+                </div>
+            </div>
+        </div>
+      </div>
+        <!-- gender -->
+        <!-- age -->
+        <div id="Age" class="col-sm-3">
+            <div class="chart-wrapper" data-step="7">
                 <div class="chart-wrapper">
                     <div class="chart-title">
-                        <h5>Enrolment By Gender</h5>
+                        <h5>Enrolment By Age</h5>
                     </div>
                     <div class="chart-stage">
-                        <div id="gender-chart"></div>
+                        <div id="age-chart"></div>
                     </div>
                 </div>
             </div>
-          </div>
-            <!-- gender -->
-            <!-- age -->
-            <div id="Age" class="col-sm-3">
-                <div class="chart-wrapper" data-step="7">
-                    <div class="chart-wrapper">
-                        <div class="chart-title">
-                            <h5>Enrolment By Age</h5>
-                        </div>
-                        <div class="chart-stage">
-                            <div id="age-chart"></div>
-                        </div>
+        </div>
+        <!-- #Age -->
+        <!-- #white/bme -->
+        <div id="White-BME" class="col-sm-3">
+            <div class="chart-wrapper" data-step="8">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        <h5>Enrolment by Ethnicity</h5>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="ethnicity-chart"></div>
                     </div>
                 </div>
             </div>
-            <!-- #Age -->
-            <!-- #white/bme -->
-            <div id="White-BME" class="col-sm-3">
-                <div class="chart-wrapper" data-step="8">
-                    <div class="chart-wrapper">
-                        <div class="chart-title">
-                            <h5>Enrolment by Ethnicity</h5>
-                        </div>
-                        <div class="chart-stage">
-                            <div id="ethnicity-chart"></div>
-                        </div>
+        </div>
+        <!-- #white/bme -->
+        <!-- #disability -->
+        <div id="disability" class="col-sm-3">
+            <div class="chart-wrapper" data-step="10" data-intro=" The description that you want" data-position="right">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        <h5>Enrolment by Disability</h5>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="disability-chart"></div>
                     </div>
                 </div>
             </div>
-            <!-- #white/bme -->
-            <!-- #disability -->
-            <div id="disability" class="col-sm-3">
-                <div class="chart-wrapper" data-step="10" data-intro=" The description that you want" data-position="right">
-                    <div class="chart-wrapper">
-                        <div class="chart-title">
-                            <h5>Enrolment by Disability</h5>
-                        </div>
-                        <div class="chart-stage">
-                            <div id="disability-chart"></div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- disability -->
-          </div>
-     </div>
-{% endblock %}
+        </div><!-- disability -->
+      </div>
+    {% endblock %}

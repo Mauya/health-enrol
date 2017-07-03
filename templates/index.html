@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">;
 </head>
-<body class="enrol-application">
+<body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="./">Enrolment Dashboard</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('dash') }}">Dashboard</a></li>
+              <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
+              <li><a href="{{ url_for('dash') }}">Dashboard</a></li>
             </ul>
             <ul class = "nav navbar-nav navbar-right">
                 <li><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a></li>
@@ -23,8 +23,10 @@
         </div>
     </nav>
 
-    {% block content %}
-    {% endblock %}
+    <div class="container" style="margin-top: 100px">
+       {% block content %}
+       {% endblock %}
+    </div>
 
     <hr />
 

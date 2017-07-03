@@ -7,12 +7,6 @@ body {
    background-color: #cccccc;
    display: block;
 }
-/*create a dark navbar with inverse*/
-.navbar-header {
-   background-color: #2B2B2B;
-   height: 40px;
-   width: 100%;
-}
 .jumbo {
     margin: auto;
     width: 80%;
