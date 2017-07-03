@@ -126,18 +126,19 @@ function makeGraphs(error, projectsJson) {
             .formatNumber(d3.format(","));
 
         totalEnrolmentChart
-            .width(750)
+            .width(600)
             .height(250)
-            .margin({top:10, right:100, bottom:30, left:50})
+            .margins({top: 10, right: 50, bottom: 30, left: 50})
             .dimension(dateDim)
             .group(numProjectsByDate)
+            .transitionDuration(500)
+            .elasticY(true)
+            .xAxisLabel("Year")
+            .yAxis().ticks(4)
             .xUnits(dc.units.ordinal)// Tell Dc.js that we're using an ordinal x axis
             .x(d3.scale.ordinal().domain(["2013","2014","2015","2016","2017"]))
             .renderArea(true)
-            .transitionDuration(500)
-            .brushOn(false)
-            .elasticY(true)
-            .y(d3.scale.linear().domain([runMin, runMax]));
+            .elasticY(true);
 
         feesStatusChart
             .width(250)
@@ -145,7 +146,6 @@ function makeGraphs(error, projectsJson) {
             .radius(100)
             .innerRadius(0)
             .transitionDuration(500)
-            .d3.select("#fees-status-chart > svg > g").attr("transform", "translate(100,100)")
             .legend(dc.legend())
             .dimension(FeesDim)
             .group(numProjectsByFees);
