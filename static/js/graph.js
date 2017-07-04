@@ -30,12 +30,6 @@ function makeGraphs(error, projectsJson) {
         var LevelGroupDim = ndx.dimension(function (d) {
             return d["Level_Group"];
         });
-    // var ReasonForLeavingDim = ndx.dimension(function (d) {
-    //     return d["Reason_For_Leaving"];
-    // });
-    //     var EnrolmentsDim = ndx.dimension(function (d) {
-    //        return d["Enrolments"];
-    //    });
         var FeesDim = ndx.dimension(function (d) {
             return d["Fees_Status"];
         });
@@ -54,7 +48,6 @@ function makeGraphs(error, projectsJson) {
         // var WithdrawalsDim = ndx.dimension(function (d) {
         //     return d["Withdrawals"];
         // });
-
 
 // Groups- calculate metrics
         var numProjectsByDate = dateDim.group();
