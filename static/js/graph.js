@@ -79,7 +79,7 @@ function makeGraphs(error, projectsJson) {
         var selectFieldCourse = dc.selectMenu('#menu-select-course');
         var totalEnrolmentsND = dc.numberDisplay('#total-enrolments-nd');
         var totalWithdrawalsND = dc.numberDisplay('#total-withdrawals-nd');
-        var totalEnrolmentChart = dc.lineChart("#total-enrolment-chart");
+        var totalEnrolmentChart = dc.barChart("#total-enrolment-chart");
         var feesStatusChart = dc.pieChart('#fees-status-chart');
         var levelGroupChart = dc.pieChart("#level-group-chart");
         var modeGroupChart = dc.pieChart("#mode-group-chart");
@@ -126,73 +126,89 @@ function makeGraphs(error, projectsJson) {
             .group(numProjectsByDate)
             .transitionDuration(500)
             .elasticY(true)
-            .renderArea(true)
-            .x(d3.scale.ordinal().domain([dateDim]))
-            .xAxis().ticks(6);
+            .x(d3.scale.ordinal().domain([2013,2014,2015,2016,2017]))
+            .xUnits(dc.units.ordinal)
+            .yAxisLabel("Total Enrolment").xAxisLabel('Academic Year');
+            //.xAxis().ticks(6);
 
         feesStatusChart
             .width(250)
             .height(250)
-            .radius(100)
             .innerRadius(0)
             .transitionDuration(500)
-            .legend(dc.legend())
             .dimension(FeesDim)
-            .group(numProjectsByFees);
+            .group(numProjectsByFees)
+            .ordinalColors(['#e41a1c','#377eb8','#4daf4a','#984ea3']);
 
         levelGroupChart
-            .height(200)
-            .radius(80)
+            .height(250)
             .innerRadius(0)
             .dimension(LevelGroupDim)
-            .group(numProjectsByLevelGroup);
+            .group(numProjectsByLevelGroup)
+            .externalLabels(10)
+            .ordinalColors(['#377eb8','#4daf4a','#984ea3','#ff7f00']);
 
 
         modeGroupChart
-            .height(200)
-            .radius(80)
+            .height(250)
             .innerRadius(0)
             .transitionDuration(1000)
             .dimension(ModeGroupDim)
-            .group(numProjectsByModeGroup);
+            .group(numProjectsByModeGroup)
+            .ordinalColors(['#377eb8','#4daf4a','#984ea3','#ff7f00']);
 
         courseStageChart
-            .height(200)
-            .radius(80)
+            .height(250)
             .innerRadius(0)
             .transitionDuration(1000)
             .dimension(CourseStageDim)
-            .group(numProjectsByCourseStage);
+            .group(numProjectsByCourseStage)
+            .ordinalColors(['#377eb8','#4daf4a','#984ea3','#ff7f00']);
 
         genderChart
             .width(250)
-            .height(200)
+            .height(250)
             .dimension(GenderDim)
             .group(numProjectsByGender)
-            //.yAxisLabel("Gender")
-            .xAxis().ticks(3);
+            .label(function (d) {
+                return d.key;
+            })
+            .elasticX(true)
+           .xAxis().ticks(3);
 
         ageChart
             .width(250)
-            .height(200)
+            .height(250)
             .dimension(AgeDim)
             .group(numProjectsByAge)
+            .label(function (d) {
+                return d.key;
+            })
+            .elasticX(true)
             .xAxis().ticks(4);
 
         ethnicityChart
             .width(250)
-            .height(200)
+            .height(250)
             .dimension(WhiteBMEDim)
             .group(numProjectsByWhiteBME)
+            .label(function (d) {
+                return d.key;
+            })
+            .elasticX(true)
             .xAxis().ticks(4);
 
         disabilityChart
             .width(250)
-            .height(200)
+            .height(250)
             .dimension(DisabilityDim)
             .group(numProjectsByDisability)
-            //.yAxisLabel("Disability")
-            .xAxis().ticks(4);
+            .label(function (d) {
+                return d.key;
+            })
+            .elasticX(true)
+            .xAxis().ticks(5)
+            d3.scale.category20c();
 
         dc.renderAll();
 }

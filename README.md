@@ -24,12 +24,11 @@ The main project components include:
 
 ### Creating the Dashboard
 * Select  Python flask micro framework for the server and set up virtualenv to ensure other module are easily imported into  [Flask](http://flask.pocoo.org/)
-* set up connection to database, port and collection call is initialised
+* Set up connection to database, port and collection call is initialised
 * Define field that will be used in the dashboard creation
-* In this analysis the following attributes/fields are used:
-'Academic_Year': True, 	'Course': True, 	'Stage_Code': True, 	'Withdrawals': True, 	'Course_Stage': True, 	'Mode_Group': True, 	'Level_Group': True, 	'Fees_Status': True, 	'Gender': True, 	'Ethnicity_Group': True, 	'White/BME': True, 	'Disability_description': True, 	'Disability_YN': True, 	'Age': True, 	'Reason_for_Leaving': True, 	'Enrolments': True, 	'_id': False.
+* In this analysis the following attributes/fields are used: Academic_Year, Course,	Stage_Code, Withdrawals, Course_Stage, Mode_Group, Level_Group, Fees_Status, Gender, Ethnicity_Group, White/BME, Disability_description, Disability_YN, Age, Enrolments.
 * Define the routes to render the HTML templates
-* Create HTML templates used to structure the dashboard using bootstrap
+* Create HTML templates to structure the dashboard using bootstrap to ensure responsiveness on different device sizes
 * Use graph.js to define the type of graphs
 * Add the requirements file which upholds a list of modules necessary for the project
 * Connect to the database and extract the data from FOHealth database

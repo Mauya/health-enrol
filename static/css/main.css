@@ -63,12 +63,12 @@ h5 {
 .chart-wrapper .chart-title {
   border-bottom: 1px  #333;
   background-color: #669999;
-  color: #000;
+  color: #fff;
   font-size: 10px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0;
-  padding: 5px 10px 4px;
+  padding: 2px;
   margin: auto;
 }
 
@@ -86,24 +86,32 @@ h5 {
 
 #total-enrolments-nd {
     width: 200px;
-    margin-left: 30px;
-    font-size: 40px;
-    background-color: #339966;
+    font-size: 30px;
+    background-color: #303b45;
     color: #ffffff;
+    text-align: center;
 }
 #total-withdrawals-nd{
     width: 200px;
-    margin-left: 30px;
-    font-size: 40px;
-    background-color: #339966;
+    font-size: 30px;
+    background-color: #303b45;
     color: #ffffff;
+    text-align: center;
 }
 #total-enrolment-chart{
     text-align: center;
 }
 
 .chart-stage {
-    color: #000000;
+    color: #000;
     margin: auto;
 }
+.dc-chart g.row text,
+.dc-chart g.pie-slice text{
+    fill: black;
+}
+text.pie-slice {
+fill: black;
+}
+
 
