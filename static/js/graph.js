@@ -170,6 +170,7 @@ function makeGraphs(error, projectsJson) {
             .height(250)
             .dimension(GenderDim)
             .group(numProjectsByGender)
+            .colors(d3.scale.category20b())
             .label(function (d) {
                 return d.key;
             })
@@ -181,6 +182,7 @@ function makeGraphs(error, projectsJson) {
             .height(250)
             .dimension(AgeDim)
             .group(numProjectsByAge)
+            .colors(d3.scale.category20b())
             .label(function (d) {
                 return d.key;
             })
@@ -192,6 +194,7 @@ function makeGraphs(error, projectsJson) {
             .height(250)
             .dimension(WhiteBMEDim)
             .group(numProjectsByWhiteBME)
+            .colors(d3.scale.category20b())
             .label(function (d) {
                 return d.key;
             })
@@ -203,12 +206,12 @@ function makeGraphs(error, projectsJson) {
             .height(250)
             .dimension(DisabilityDim)
             .group(numProjectsByDisability)
+            .colors(d3.scale.category20b())
             .label(function (d) {
                 return d.key;
             })
             .elasticX(true)
-            .xAxis().ticks(5)
-            d3.scale.category20c();
+            .xAxis().ticks(3);
 
         dc.renderAll();
 }

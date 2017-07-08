@@ -110,7 +110,7 @@ h5 {
 .dc-chart g.pie-slice text{
     fill: black;
 }
-text.pie-slice {
+text.pie-slice text {
 fill: black;
 }
 
