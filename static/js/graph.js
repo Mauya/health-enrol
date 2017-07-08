@@ -196,6 +196,7 @@ function makeGraphs(error, projectsJson) {
             .colors(d3.scale.category20b())
             .label(function (d) {
                 return d.key;
+            })
             .elasticX(true)
             .xAxis().ticks(4);
 
@@ -208,8 +209,6 @@ function makeGraphs(error, projectsJson) {
             .label(function (d) {
                 return d.key;
             })
-            .elasticX(true)
-            .xAxis().ticks(3);
             .elasticX(true)
             .xAxis().ticks(5);
 

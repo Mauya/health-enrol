@@ -2,20 +2,13 @@
 {% block content %}
     <div class="row">
         <div id="date" class="col-sm-3">
-            <div class="chart-wrapper">
+            <div class="chart-wrapper" ata-step=" 1 " data-intro=" Select a year for a display of that years enrolment data"
+                 style="font-weight: normal" data-position="right">
                 <div class="chart-title">
                     <h5>Year</h5>
                 </div>
                 <div class="chart-stage">
                     <div id="menu-select-academic_year" ></div>
-            <div class="chart-wrapper" data-step="1" data-intro="The numbers of all students enrolled as of 1 Dec of each year" data-position="right">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        <h5>Year</h5>
-                    </div>
-                    <div class="chart-stage">
-                        <div id="menu-select-academic_year" ></div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -31,10 +24,9 @@
         </div>
         <div id="totalEnrol" class="col-sm-3">
             <div class="chart-wrapper" data-step="2" data-intro="
-            <P>Enrolment Overview report which provide information on annual total enrolments</p>" data-position="left">
             <h2>Annual Enrolments</h2><hr>
-            <p>Five year trend of recorded enrolments for the Faculty of Health. Click on the chart to slice</p>
-            " data-position="right">
+            <p>Five year trend of recorded enrolments for the Faculty of Health. Click on the chart to slice</p>"
+             data-position="right" data-toggle="tooltip" data-animation="true" data-placement="bottom" data-html="true">
                 <div class="chart-title">
                     <h5>Total Enrolments</h5>
                 </div>

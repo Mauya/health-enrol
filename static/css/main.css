@@ -113,22 +113,42 @@ h5 {
 text.pie-slice text {
 fill: black;
 }
-.tooltip {
-    width: 200px;
+/*.tooltip {*/
+    /*width: 200px;*/
+/*}*/
+
+/*li {*/
+    /*list-style: none;*/
+    /*text-align: left;*/
+/*}*/
+
+/*g text {*/
+    /*fill: whitesmoke;*/
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif*/
+/*}*/
+
+/*.tooltips {*/
+    /*background-color: #cccccc;*/
+/*}*/
+/* Intro.js custom rules */
+div.introjs-tooltiptext {
+    font-family: Roboto;
+   font-weight: normal;
+   font-size: 12px;
+   padding-bottom: 12px;
 }
 
-li {
-    list-style: none;
-    text-align: left;
+.introjs-bullets ul li a {
+    margin-bottom: 8px;
 }
 
-g text {
-    fill: whitesmoke;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+#outer {
+    padding: 1.5%;
 }
 
-.tooltips {
-    background-color: #cccccc;
+#intro-start {
+  color: lightblue
 }
+
 
 
