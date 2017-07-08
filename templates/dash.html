@@ -8,11 +8,19 @@
                 </div>
                 <div class="chart-stage">
                     <div id="menu-select-academic_year" ></div>
+            <div class="chart-wrapper" data-step="1" data-intro="The numbers of all students enrolled as of 1 Dec of each year" data-position="right">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        <h5>Year</h5>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="menu-select-academic_year" ></div>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="course" class="col-sm-3">
-            <div class="chart-wrapper">
+            <div class="chart-wrapper" data-step="2" data-intro="Select any course to view the breakdown" data-position="right">
                 <div class="chart-title">
                     <h5>Course</h5>
                 </div>
@@ -24,6 +32,9 @@
         <div id="totalEnrol" class="col-sm-3">
             <div class="chart-wrapper" data-step="2" data-intro="
             <P>Enrolment Overview report which provide information on annual total enrolments</p>" data-position="left">
+            <h2>Annual Enrolments</h2><hr>
+            <p>Five year trend of recorded enrolments for the Faculty of Health. Click on the chart to slice</p>
+            " data-position="right">
                 <div class="chart-title">
                     <h5>Total Enrolments</h5>
                 </div>
@@ -59,9 +70,12 @@
         <!-- Metric 1 -->
         <!-- Metric 2 -->
         <div id="feeStatus" class="col-sm-4">
-            <div class="chart-wrapper">
+            <div class="chart-wrapper" data-step="2" data-intro="
+            <h2>Overseas and Home Students</h2><hr>
+            <p>International student targets are changing. Management of international enrolments entails monitoring of numbers and fee assessment.</p>
+            " data-position="top">
                 <div class="chart-title">
-                    <h5>Enrolment by Fee Status</h5>
+                    <i class="fa fa-pie-chart"></i><h5>Enrolment by Fee Status</h5><i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-animation="true" data-placement="Left" data-html="true" title="Fee categories:<ul><li>Home/Eu</li><li>Overseas</li><li>Unknown</li></ul>"></i>
                 </div>
              <div class="chart-stage">
                 <div id="fees-status-chart"></div>
@@ -162,4 +176,6 @@
             </div>
         </div><!-- disability -->
       </div>
+        </div>
+    </div>
     {% endblock %}

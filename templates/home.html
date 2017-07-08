@@ -8,6 +8,8 @@
        <p>The dashboard shows enrolment and withdrawal numbers.</p>
        <p>The select menu allows multiple filtering options for analysing data by key indicators such as gender, ethnicity and or international/overseas students.</p>
        <p>The dashboard highlights trends</p>
-       <button type="button" class="btn btn-default btn-lg"><a href="{{ url_for('dash') }}">Get Started</a></button>
+       <button class="intro-button btn-default btn-lg" type="button" autofocus onclick="intro().setOption('tooltipsClass', 'tooltips')
+        .setOption('showProgress',true).start();">
+           <a href="{{ url_for('dash') }}">Get Started</a></button>
    </div>
 {% endblock %}
