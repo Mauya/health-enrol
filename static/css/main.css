@@ -113,5 +113,22 @@ h5 {
 text.pie-slice {
 fill: black;
 }
+.tooltip {
+    width: 200px;
+}
+
+li {
+    list-style: none;
+    text-align: left;
+}
+
+g text {
+    fill: whitesmoke;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+.tooltips {
+    background-color: #cccccc;
+}
 
 

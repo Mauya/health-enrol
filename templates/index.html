@@ -2,13 +2,15 @@
 <html>
 <head>
    <title>Faculty of Health</title>
-   <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/keen-dashboards.css')}}">
-    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
-   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">;
+    <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/bootstrap.min.css')}}"/>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/keen-dashboards.css')}}"/>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+    <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/introjs.css')}}"/>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top" data-step="1" data-Intro="<h3>Welcome to Faculty of Health</h3><hr>
+<p>Enrolment Overview for student numbers management</p>" data-position="bottom">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="./">Enrolment Dashboard</a>
@@ -43,6 +45,8 @@
   <script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
   <script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
   <script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
+  <script src="{{url_for ('static', filename='lib/js/intro.js')}}"></script>
   <script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+
 </body>
 </html>

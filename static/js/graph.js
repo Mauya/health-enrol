@@ -129,7 +129,6 @@ function makeGraphs(error, projectsJson) {
             .x(d3.scale.ordinal().domain([2013,2014,2015,2016,2017]))
             .xUnits(dc.units.ordinal)
             .yAxisLabel("Total Enrolment").xAxisLabel('Academic Year');
-            //.xAxis().ticks(6);
 
         feesStatusChart
             .width(250)
@@ -170,9 +169,6 @@ function makeGraphs(error, projectsJson) {
             .height(250)
             .dimension(GenderDim)
             .group(numProjectsByGender)
-            .label(function (d) {
-                return d.key;
-            })
             .elasticX(true)
            .xAxis().ticks(3);
 
@@ -181,9 +177,6 @@ function makeGraphs(error, projectsJson) {
             .height(250)
             .dimension(AgeDim)
             .group(numProjectsByAge)
-            .label(function (d) {
-                return d.key;
-            })
             .elasticX(true)
             .xAxis().ticks(4);
 
@@ -192,9 +185,6 @@ function makeGraphs(error, projectsJson) {
             .height(250)
             .dimension(WhiteBMEDim)
             .group(numProjectsByWhiteBME)
-            .label(function (d) {
-                return d.key;
-            })
             .elasticX(true)
             .xAxis().ticks(4);
 
@@ -203,12 +193,8 @@ function makeGraphs(error, projectsJson) {
             .height(250)
             .dimension(DisabilityDim)
             .group(numProjectsByDisability)
-            .label(function (d) {
-                return d.key;
-            })
             .elasticX(true)
-            .xAxis().ticks(5)
-            d3.scale.category20c();
+            .xAxis().ticks(5);
 
         dc.renderAll();
 }
