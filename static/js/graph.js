@@ -61,14 +61,6 @@ function makeGraphs(error, projectsJson) {
         var numProjectsByFees = FeesDim.group();
         var numProjectsByLevelGroup = LevelGroupDim.group();
         var numProjectsByModeGroup = ModeGroupDim.group();
-        if (Mode_Group = "PT")
-            return "Part-time";
-        else if(Mode_Group="FT")
-            return"Full-time";
-        else if (Mode_Group="BL")
-            return "Blended-learning";
-        else if(Mode_Group="Missing")
-            return "Missing";
         var numProjectsByCourseStage = CourseStageDim.group();
         var numProjectsByGender = GenderDim.group();
         var numProjectsByAge = AgeDim.group();
