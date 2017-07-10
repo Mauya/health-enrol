@@ -2,7 +2,7 @@
 {% block content %}
     <div class="row">
         <div id="date" class="col-sm-3">
-            <div class="chart-wrapper" ata-step=" 1 " data-intro=" Select a year for a display of that years enrolment data"
+            <div class="chart-wrapper" data-step="1" data-intro=" Select a year for a display of that years enrolment data"
                  style="font-weight: normal" data-position="right">
                 <div class="chart-title">
                     <h5>Year</h5>
@@ -13,7 +13,8 @@
             </div>
         </div>
         <div id="course" class="col-sm-3">
-            <div class="chart-wrapper" data-step="2" data-intro="Select any course to view the breakdown" data-position="right">
+            <div class="chart-wrapper" data-step="2" data-intro="Select any course to view the breakdown"
+                 style="font-weight: normal" data-position="right">
                 <div class="chart-title">
                     <h5>Course</h5>
                 </div>
@@ -23,9 +24,9 @@
             </div>
         </div>
         <div id="totalEnrol" class="col-sm-3">
-            <div class="chart-wrapper" data-step="2" data-intro="
+            <div class="chart-wrapper" data-step="3" data-intro="
             <h2>Annual Enrolments</h2><hr>
-            <p>Five year trend of recorded enrolments for the Faculty of Health. Click on the chart to slice</p>"
+            <p>Total recorded enrolments for the Faculty of Health.</p>"
              data-position="right" data-toggle="tooltip" data-animation="true" data-placement="bottom" data-html="true">
                 <div class="chart-title">
                     <h5>Total Enrolments</h5>
@@ -36,8 +37,8 @@
             </div>
         </div>
         <div id="withdrawals" class="col-sm-3">
-            <div class="chart-wrapper" data-step="3" data-intro="
-            <P>Report which provide information on annual total withdrawals</p>" data-position="left">
+            <div class="chart-wrapper" data-step="4" data-intro="
+            <P>Show total withdrawals</p>" style="font-weight: normal" data-position="left">
                 <div class="chart-title">
                     <h5>Total Withdrawals</h5>
                 </div>
@@ -50,7 +51,10 @@
         <!-- Metric 1 -->
     <div class="row">
         <div id="trend" class="col-sm-8">
-            <div class="chart-wrapper">
+            <div class="chart-wrapper" data-step="5" data-intro="
+            <h2>Annual Enrolments</h2><hr>
+            <p>Five year trend of recorded enrolments for the Faculty of Health. Click on the chart to slice</p>"
+             data-position="right" data-toggle="tooltip" data-animation="true" data-placement="bottom" data-html="true">
                 <div class="chart-title">
                     <h5>Total Enrolment Trends</h5>
                 </div>
@@ -62,7 +66,7 @@
         <!-- Metric 1 -->
         <!-- Metric 2 -->
         <div id="feeStatus" class="col-sm-4">
-            <div class="chart-wrapper" data-step="2" data-intro="
+            <div class="chart-wrapper" data-step="6" data-intro="
             <h2>Overseas and Home Students</h2><hr>
             <p>International student targets are changing. Management of international enrolments entails monitoring of numbers and fee assessment.</p>
             " data-position="top">
@@ -78,9 +82,14 @@
      <!-- Metric 2 -->
      <div class="row">
       <div id="level" class="col-sm-4">
-        <div class="chart-wrapper">
+        <div class="chart-wrapper" data-step="7" data-intro="
+            <h2>Level of Study</h2><hr>
+            <p>This shows those enrolled as Undergraduates, Postgraduates or on Stand alone Modules</p>"
+             data-position="right" data-toggle="tooltip" data-animation="true" data-placement="bottom" data-html="true">
           <div class="chart-title">
-              <h5>Enrolments by Level Of Study</h5>
+              <h5><i class="fa fa-bar-chart"></i>Enrolments by Level Of Study <i class="fa fa-question-circle" data-toggle="tooltip"
+              data-animation="true" data-placement="top" data-html="true" title="Level of study as:<ul><li>Undergraduate</li>
+              <li>Postgraduate</li><li>Stand Alone Module</li>"></i></h5>
           </div>
           <div class="chart-stage">
             <div id="level-group-chart"></div>
@@ -90,9 +99,12 @@
       <!-- Time Chart -->
         <!-- course-stage Pie -->
       <div id="mode" class="col-sm-4">
-        <div class="chart-wrapper">
+        <div class="chart-wrapper" data-step="8" data-intro="
+            <h2>Mode of Study</h2><hr>
+            <p>Enrolments broken by mode of study. This data can be used with course and other charts to identify student numbers in trouble</p>"
+             data-position="right" data-toggle="tooltip" data-animation="true" data-placement="bottom" data-html="true">
           <div class="chart-title">
-              <h5>Enrolment by Mode Of Study</h5>
+              <h5><i class = "fa fa-pie-chart"></i>Enrolment by Mode Of Study</h5>
           </div>
           <div class="chart-stage">
             <div id="mode-group-chart"></div>
@@ -101,7 +113,7 @@
        </div>
           <!-- course-stage Pie -->
       <div id="stage" class="col-sm-4">
-        <div class="chart-wrapper">
+        <div class="chart-wrapper" data-step="9" data-intro="The description that you want" style="font-weight: normal" data-position="right">
           <div class="chart-title">
               <h5>Enrolment By course stage</h5>
           </div>
@@ -114,8 +126,7 @@
      <!--Faculty enrolment Profile -->
     <div class="row">
       <div id="gender" class="col-sm-3">
-        <div class="chart-wrapper" data-step="6">
-            <div class="chart-wrapper">
+            <div class="chart-wrapper" data-step="10" data-intro="The description that you want" style="font-weight: normal" data-position="right">
                 <div class="chart-title">
                     <h5>Enrolment By Gender</h5>
                 </div>
@@ -124,25 +135,22 @@
                 </div>
             </div>
         </div>
-      </div>
         <!-- gender -->
         <!-- age -->
         <div id="Age" class="col-sm-3">
-            <div class="chart-wrapper" data-step="7">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        <h5>Enrolment By Age</h5>
-                    </div>
-                    <div class="chart-stage">
-                        <div id="age-chart"></div>
-                    </div>
+            <div class="chart-wrapper" data-step="11" data-intro="Describes enrolments based on young or mature students" style="font-weight: normal" data-position="right">
+                <div class="chart-title">
+                    <h5>Enrolment By Age</h5>
+                </div>
+                <div class="chart-stage">
+                    <div id="age-chart"></div>
                 </div>
             </div>
         </div>
         <!-- #Age -->
         <!-- #white/bme -->
         <div id="White-BME" class="col-sm-3">
-            <div class="chart-wrapper" data-step="8">
+            <div class="chart-wrapper" data-step="12" data-intro="shows the diversity of origin" style="font-weight: normal" data-position="right">
                 <div class="chart-wrapper">
                     <div class="chart-title">
                         <h5>Enrolment by Ethnicity</h5>
@@ -156,7 +164,7 @@
         <!-- #white/bme -->
         <!-- #disability -->
         <div id="disability" class="col-sm-3">
-            <div class="chart-wrapper" data-step="10" data-intro=" The description that you want" data-position="right">
+            <div class="chart-wrapper" data-step="13" data-intro="This highlight the enrolment of students with special needs" data-position="right">
                 <div class="chart-wrapper">
                     <div class="chart-title">
                         <h5>Enrolment by Disability</h5>
@@ -168,6 +176,4 @@
             </div>
         </div><!-- disability -->
       </div>
-        </div>
-    </div>
     {% endblock %}

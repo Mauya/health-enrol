@@ -61,6 +61,14 @@ function makeGraphs(error, projectsJson) {
         var numProjectsByFees = FeesDim.group();
         var numProjectsByLevelGroup = LevelGroupDim.group();
         var numProjectsByModeGroup = ModeGroupDim.group();
+        if (Mode_Group = "PT")
+            return "Part-time";
+        else if(Mode_Group="FT")
+            return"Full-time";
+        else if (Mode_Group="BL")
+            return "Blended-learning";
+        else if(Mode_Group="Missing")
+            return "Missing";
         var numProjectsByCourseStage = CourseStageDim.group();
         var numProjectsByGender = GenderDim.group();
         var numProjectsByAge = AgeDim.group();
@@ -137,15 +145,14 @@ function makeGraphs(error, projectsJson) {
             .transitionDuration(500)
             .dimension(FeesDim)
             .group(numProjectsByFees)
-            .ordinalColors(['#e41a1c','#377eb8','#4daf4a','#984ea3']);
+            .ordinalColors(["#8a89a6", "#7b6888", "#6b486b", "#a05d56"]);
 
         levelGroupChart
             .height(250)
             .innerRadius(0)
             .dimension(LevelGroupDim)
             .group(numProjectsByLevelGroup)
-            .externalLabels(10)
-            .ordinalColors(['#377eb8','#4daf4a','#984ea3','#ff7f00']);
+            .ordinalColors(["#8a89a6", "#7b6888", "#6b486b", "#a05d56"]);
 
 
         modeGroupChart
@@ -154,7 +161,7 @@ function makeGraphs(error, projectsJson) {
             .transitionDuration(1000)
             .dimension(ModeGroupDim)
             .group(numProjectsByModeGroup)
-            .ordinalColors(['#377eb8','#4daf4a','#984ea3','#ff7f00']);
+            .ordinalColors(["#8a89a6", "#7b6888", "#6b486b", "#a05d56"]);
 
         courseStageChart
             .height(250)
@@ -162,7 +169,7 @@ function makeGraphs(error, projectsJson) {
             .transitionDuration(1000)
             .dimension(CourseStageDim)
             .group(numProjectsByCourseStage)
-            .ordinalColors(['#377eb8','#4daf4a','#984ea3','#ff7f00']);
+            .ordinalColors(["#8a89a6", "#7b6888", "#6b486b", "#a05d56"]);
 
         genderChart
             .width(250)
