@@ -2,14 +2,13 @@ from flask import Flask
 from flask import render_template
 from pymongo import MongoClient
 import json
-import os
 
 app = Flask(__name__)
 
-MONGO_URI = os.getenv('MONGODB_URI', 'mongodb://localhost:27017')
-DBS_NAME = os.getenv('MONGO_DB_NAME', 'FOHealth')
-COLLECTION_NAME = 'ProjectEnrol'
-
+MONGODB_HOST = 'localhost'
+MONGODB_PORT = 27017
+DBS_NAME = 'FOHealth'
+COLLECTION_NAME = 'projects'
 # A constant that defines the record fields that we wish to retrieve.
 FIELDS = {
     'Academic_Year': True,
@@ -53,7 +52,7 @@ def health_projects():
    """
     # Open a connection to MongoDB using a with statement such that the
     # connection will be closed as soon as we exit the with statement
-    with MongoClient(MONGO_URI) as conn:
+    with MongoClient(MONGODB_HOST, MONGODB_PORT) as conn:
         # Define which collection we wish to access
         collection = conn[DBS_NAME][COLLECTION_NAME]
         # Retrieve a result set only with the fields defined in FIELDS
