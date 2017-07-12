@@ -110,14 +110,7 @@ h5 {
 .dc-chart g.pie-slice text{
     fill: black;
 }
-li {
-    list-style: none;
-    text-align: left;
-}
 
-.tooltips {
-    background-color: #cccccc;
-}
 /* Intro.js custom rules */
 div.introjs-tooltiptext {
    font-weight: normal;
