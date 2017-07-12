@@ -9,13 +9,12 @@ app = Flask(__name__)
 MONGO_URI = os.getenv('MONGODB_URI', 'mongodb://localhost:27017')
 DBS_NAME = os.getenv('MONGO_DB_NAME', 'FOHealth')
 COLLECTION_NAME = 'projects'
-# A constant that defines the record fields that we wish to retrieve.
+# defines the record fields that we wish to retrieve.
 FIELDS = {
     'Academic_Year': True,
     'Course': True,
     'Stage_Code': True,
-    'Withdrawals': True,
-    'Course_Stage': True,
+    e    'Course_Stage': True,
     'Mode_Group': True,
     'Level_Group': True,
     'Fees_Status': True,
