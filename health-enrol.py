@@ -29,7 +29,6 @@ FIELDS = {
     '_id': False,
 }
 
-
 @app.route('/')
 def home():
     return render_template('home.html')
