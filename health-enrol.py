@@ -26,7 +26,7 @@ FIELDS = {
     'Age': True,
     'Reason_for_Leaving': True,
     'Enrolments': True,
-    'Withdrawals':True,
+    'Withdrawals': True,
     '_id': False,
 }
 
