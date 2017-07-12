@@ -14,7 +14,7 @@ FIELDS = {
     'Academic_Year': True,
     'Course': True,
     'Stage_Code': True,
-    e    'Course_Stage': True,
+    'Course_Stage': True,
     'Mode_Group': True,
     'Level_Group': True,
     'Fees_Status': True,
