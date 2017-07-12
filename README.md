@@ -42,3 +42,6 @@ The main project components include:
 * MongoDB - A No-SQL database which is a repository for the project data [mongoDB](https://www.mongodb.com/)
 * Dashboard deployed by Heroku
 
+### Testing
+* Testing was on going using developer and debugging tools in console. Also the inbuilt highlighter in graph.js helps pick errors quickly.
+
