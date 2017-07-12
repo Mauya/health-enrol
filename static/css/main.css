@@ -119,19 +119,14 @@ li {
     text-align: left;
 }
 
-g text {
-    fill: whitesmoke;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-}
-
 .tooltips {
     background-color: #cccccc;
 }
 /* Intro.js custom rules */
 div.introjs-tooltiptext {
    font-weight: normal;
-   font-size: 12px;
-   padding-bottom: 12px;
+   font-size: 10px;
+   padding-bottom: 10px;
 }
 
 .introjs-bullets ul li a {
@@ -142,9 +137,6 @@ div.introjs-tooltiptext {
     padding: 1.5%;
 }
 
-#intro-start {
-  color: lightblue
-}
 
 
 
