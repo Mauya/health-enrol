@@ -110,10 +110,6 @@ h5 {
 .dc-chart g.pie-slice text{
     fill: black;
 }
-.tooltip {
-    width: 200px;
-}
-
 li {
     list-style: none;
     text-align: left;
