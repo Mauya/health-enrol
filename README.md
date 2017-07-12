@@ -44,4 +44,5 @@ The main project components include:
 
 ### Testing
 * Testing was on going using developer and debugging tools in console. Also the inbuilt highlighter in graph.js helps pick errors quickly.
+* The site responsiveness was tested on: [Responsive checker)(http://responsivedesignchecker.com/). for windows 10 firefox, chrome, iphone S6 and on galaxy tablet
 
