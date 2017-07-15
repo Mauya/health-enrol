@@ -22,9 +22,10 @@ body {
     background-color: #1a1a1a;
     color: #ffffff;
     font-weight: bolder;
-    margin-left: 108px;
+    border-radius: 8px;
  }
-h2 {
+
+h1 {
    margin-top: 20px;
    text-align: center;
    letter-spacing: -2px;
@@ -83,7 +84,6 @@ h5 {
     background-color: #339966;
     color: #ffffff;
 }
-
 #total-enrolments-nd {
     width: 200px;
     font-size: 30px;
@@ -101,7 +101,6 @@ h5 {
 #total-enrolment-chart{
     text-align: center;
 }
-
 .chart-stage {
     color: #000;
     margin: auto;
@@ -122,6 +121,9 @@ div.introjs-tooltiptext {
     margin-bottom: 8px;
 }
 
+.introjs-progressbar {
+    background-color: rgb(0, 144, 200);
+}
 #outer {
     padding: 1.5%;
 }

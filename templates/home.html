@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% block content %}
    <div class="jumbo col-sm-9">
-       <h2>Welcome to The Faculty of Health</h2>
+       <h1 data-step="1" data-intro="This is a tooltip!">Welcome to The Faculty of Health</h1><br>
 
        <p>The dashboard shows all student enrolled in the past 5 years in the Faculty of Health.</p>
        <p>The interactive dashboards allows enrolment data to be assessed against defined internal targets and compared
@@ -9,8 +9,7 @@
        <p>The dashboard shows enrolment and withdrawal numbers.</p>
        <p>The select menu allows multiple filtering options for analysing data by key indicators such as gender, ethnicity and or international/overseas students.</p>
        <p>The dashboard highlights trends and equality variations</p>
-       <button class="intro-button btn-default btn-lg" type="button" autofocus onclick="intro().setOption('tooltipsClass', 'tooltips')
-        .setOption('showProgress',true).start();">
-           <a href="{{ url_for('dash') }}">Get Started</a></button>
+       <a class="btn btn-large btn-default" href="{{ url_for('dash') }}" autofocus
+          onclick="javascript:introJs().start();">Navigate Dashboard</a>
    </div>
 {% endblock %}

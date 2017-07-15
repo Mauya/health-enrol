@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
    <title>Faculty of Health</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/bootstrap.min.css')}}"/>
     <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/keen-dashboards.css')}}"/>
     <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/font-awesome.css') }}"/>
     <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/introjs.css')}}"/>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" data-step="1" data-Intro="<h3>Welcome to Faculty of Health</h3><hr>
-<p>Enrolment Overview for student numbers management</p>" data-position="bottom">
+    <p>Enrolment Overview for student numbers management</p>" data-position="bottom">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="./">Enrolment Dashboard</a>
@@ -18,6 +22,8 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
               <li><a href="{{ url_for('dash') }}">Dashboard</a></li>
+                <li><a class="btn btn-info" href="javascript:void(0);" onclick="javascript:introJs().start();">Start
+                    Dashboard</a></li>
             </ul>
             <ul class = "nav navbar-nav navbar-right">
                 <li><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a></li>
