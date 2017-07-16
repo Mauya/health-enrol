@@ -121,11 +121,9 @@ div.introjs-tooltiptext {
     margin-bottom: 8px;
 }
 
-.introjs-progressbar {
-    background-color: rgb(0, 144, 200);
-}
-#outer {
-    padding: 1.5%;
+.introjs-bullets li {
+    list-style: none;
+    text-align: left;
 }
 
 
