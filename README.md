@@ -13,14 +13,14 @@ The downloaded data is converted into a CSV file. The file is then imported into
 * Use Python Flask micro Framework which include standard folder static and templates.
 * Create a two page application, introduction and dashboard page
 * The data as a true reflection of data stored in the student records and downloaded and stored in MongoDB
-* Dashboard need dc.js, d3.js, crossfilter.js (third part js files) to build the front end UI and need also third part css files for styling the graphs and charts
+* Dashboard need dc.js, d3.js, crossfilter.js, intro.js (third part js files) to build the front end UI and need also third part css files for styling the graphs and charts
 
 ### Structure
 The structure of the project includes in the the static folder, vendor JavaScript libraries d3.js, dc.js, crossfilter.js etc and css files bootstrap.min.js, dc.css and keen-dashboards.css.
 The main project components include:
 * **the graph.js** which makes creating charts and graphs easy,
 * **health-enrol.py** to create routes and data connection, and
-* **the HTML templates**(index.html, main.html, dash.html) where tables and graphs are displayed
+* **the HTML templates**(index.html, main.html, dash.html) where charts and graphs are displayed
 
 ### Creating the Dashboard
 * Select  Python flask micro framework for the server and set up virtualenv to ensure other module are easily imported into  [Flask](http://flask.pocoo.org/)
@@ -43,6 +43,22 @@ The main project components include:
 * Dashboard deployed by Heroku
 
 ### Testing
-* Testing was on going using developer and debugging tools in console. Also the inbuilt highlighter in graph.js helps pick errors quickly.
-* The site responsiveness was tested on: [Responsive checker)(http://responsivedesignchecker.com/). for windows 10 firefox, chrome, iphone S6 and on galaxy tablet
+#### Examples of errors/bugs encountered and tools used:
+* First bug * Failed to load resource: the server responded with a status of 404 (Not Found)*.
+- resolved ** Loading d3.js, dc.js and cross filter in the index.html as scripts. Data was reloaded and the error disappeared **
+* Second most * popular errors were Typos and missing semi colons in Graph.js *
+- resolved ** Using JSHint to verify code and highlight missing semi-colons and typos and other errors **
+* Thirdly, problem with pie chart text not showing, went to previous commit which was good. Problem came at recommitting the changed graphs -error * head detached at commit*
+- used google ** to check stack overflow  which advised to use * git checkout master * then git add . **
+* Fourthly, one main python problem was "Uncaught RangeError: Maximum call stack size exceeded"
+- learned how the name stack overflow came about. After trying to figure out what it sis and how to solve it to no avail. My mentor Yoni Lavi walked me through and showed me how to ue the inspector to drill down. The issue was the field names in the health-enrol.py were not the same as in the data-set. Corrections were made and when run again the problem was resolved.
+* Testing was on going using developer and debugging tools in console. These included:
+- live editing using the web inspector following error messages in the console. I set breakpoints, which provided an easy way to navigate my code in graph.js.
+- used conditional breakpoint once when checking why graph labels where not showing combined with CSS selector managed to identify the use of a color object.
+- Using the console, console log() to check whether data was loaded.
+- In python used debugger to stop at a moment and check particular element
+- A lot of solutions were provided on Code Institute slack from other students and mentors (not easy to track).
+* The site responsiveness was tested on: [Responsive checker)(http://responsivedesignchecker.com/). for windows 10 firefox, chrome, iphone S6 and on galaxy tablet.
+
+### References
 

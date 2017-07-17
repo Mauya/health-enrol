@@ -13,6 +13,7 @@ function makeGraphs(error, projectsJson) {
 
     // Crossfilter instance
     var ndx = crossfilter(FOHealthProjects);
+    var all = ndx.groupAll();
 
     // Dimensions
     var dateDim = ndx.dimension(function (d) {
@@ -45,9 +46,6 @@ function makeGraphs(error, projectsJson) {
         var DisabilityDim = ndx.dimension(function (d) {
             return d["Disability_YN"];
         });
-        // var WithdrawalsDim = ndx.dimension(function (d) {
-        //     return d["Withdrawals"];
-        // });
 
 // Groups- calculate metrics
         var numProjectsByDate = dateDim.group();
@@ -66,10 +64,6 @@ function makeGraphs(error, projectsJson) {
         var numProjectsByAge = AgeDim.group();
         var numProjectsByWhiteBME = WhiteBMEDim.group();
         var numProjectsByDisability = DisabilityDim.group();
-
-
-    //all
-    //     var all = ndx.groupAll();
 
 // Apply DC and D3
 
@@ -101,6 +95,8 @@ function makeGraphs(error, projectsJson) {
         selectFieldCourse
             .dimension(CourseNameDim)
             .group(numProjectsByCourseName);
+
+    //Graphs begin
 
         totalEnrolmentsND
             .formatNumber(d3.format("d"))
