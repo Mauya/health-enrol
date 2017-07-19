@@ -40,7 +40,7 @@ The main project components include:
 * keen.js - a dashboard template library. [keen.js](https://keen.io/).
 * bootstrap - used in conjunction with keen.js to layout the dashboard elements.
 * MongoDB - A No-SQL database which is a repository for the project data [mongoDB](https://www.mongodb.com/)
-* Dashboard deployed by Heroku
+* Intro.js - this is a library to create a step-by-step guide that assigns interactive pop-up tooltip on the graph with useful information to the user [Intro.js](https://www.http://introjs.com/).
 
 ### Testing
 #### Examples of errors/bugs encountered and tools used:
@@ -59,6 +59,32 @@ The main project components include:
 - In python used debugger to stop at a moment and check particular elements
 - Some solutions were provided on Code Institute slack from other students and mentors (not easy to track though).
 * The site responsiveness was tested on: [Responsive checker](http://responsivedesignchecker.com/). for windows 10 firefox, chrome, iphone S6 and on galaxy tablet.
+
+### Deploying to Heroku
+* The first thing is to make sure the project is up to date locally as well as in git (remote)
+* Next sign in on [Heroku](https://signup.heroku.com/)
+* Using the command line type```heroku create``` to create a new application on heroku
+* The new application is listed in the heroku Dashboard. My new app is found here [Health](https://lit-cliffs-50689.herokuapp.com/)
+* For the app to work properly, activate virtualenv and then add Gunicorn ```pip install gunicorn``` in Python. This is for running HTTP servers on the operating systems
+* Next add to the project folder the requirement.txt file ``` pip freeze --local > requirement.txt. This ensures all dependencies for the project are added
+* For version control heroku creates the git instance that is available in the settings of heroku dashboard
+* next is to init in git ```git init```
+* ```git remote add heroku [link](https://git.heroku.com/lit-cliffs-50689.git)
+* ```git commit```
+* ```git push heroku master```
+* next is to deploy the MongoDB
+* First Install **mLab MongoDB** from [here](https://elements.heroku.com/addons/mongolab)
+* Using **mLab MongoDB** link create a new user and a new collection
+* Add the csv file that was used in the project
+* ```mongoimport -h <hostname> -d <dbname> -c <collectionname> -u <dbuser> -p <dbpassword> --file C:\Users\User\Desktop\FOH\healthEnrolData.csv --type csv –headerline```
+* The hostname and dbname comes from the command created in heroku
+* complete all sections
+* To ensure data is loaded go to mongo management studio and connect - new connection
+* Change settings to set the environment variable for Mongo URI, DBS-NAME.
+* Push to heroku master
+* Check if the app is working
+
+### instructions for cloning the project
 
 ### Acknowledgement
 * Yoni Lavi (Mentor) for providing easy to follow steps for debugging in the web inspector mostly. Also for encouraging me to look at errors and bugs as opportunities.
