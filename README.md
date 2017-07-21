@@ -63,13 +63,13 @@ The main project components include:
 ### Deploying to Heroku
 * The first thing is to make sure the project is up to date locally as well as in git (remote)
 * Next sign in on [Heroku](https://signup.heroku.com/)
-* Using the command line type```heroku create``` to create a new application on heroku
+* Using the command line type ```heroku create``` to create a new application on heroku
 * The new application is listed in the heroku Dashboard. My new app is found here [Health](https://lit-cliffs-50689.herokuapp.com/)
 * For the app to work properly, activate virtualenv and then add Gunicorn ```pip install gunicorn``` in Python. This is for running HTTP servers on the operating systems
-* Next add to the project folder the requirement.txt file ``` pip freeze --local > requirement.txt. This ensures all dependencies for the project are added
+* Next add to the project folder the requirement.txt file ```pip freeze --local > requirement.txt``` This ensures all dependencies for the project are added
 * For version control heroku creates the git instance that is available in the settings of heroku dashboard
 * next is to init in git ```git init```
-* ```git remote add heroku [link](https://git.heroku.com/lit-cliffs-50689.git)
+* ```git remote add heroku [link](https://git.heroku.com/lit-cliffs-50689.git)```
 * ```git commit```
 * ```git push heroku master```
 * next is to deploy the MongoDB
@@ -84,11 +84,37 @@ The main project components include:
 * Push to heroku master
 * Check if the app is working
 
-### instructions for cloning the project
+### Instructions for cloning the project
+Getting started is simple. You can clone the Health-enrol repository and add the required dependencies.
+
+#### Prerequisites
+You must have git to clone the health enrol repository. If you do not have git account set up from here [Git](https://git-scm.com/)
+
+Clone the Health-enrol repository:
+
+```git clone https://github.com/Mauya/health-enrol.git```
+
+Install and activate virtualenv to your project
+
+Install the dependencies file:
+
+```pip install -r requirements.txt```
+
+This list all dependencies required by the project using Flask micro-Framework
+
+Next step is to Upload data located in the project folder as a CSV.file
+
+The CSV file is small and will only take a few seconds to load. Use the following:
+mongoimport -d FOHealth -c projects --type csv --file folder/file.csv –headerline```
+
+Use the local server to see the project.
+
+Heroku Application:
+To browse the deployed app [click here](https://lit-cliffs-50689.herokuapp.com/)
 
 ### Acknowledgement
 * Yoni Lavi (Mentor) for providing easy to follow steps for debugging in the web inspector mostly. Also for encouraging me to look at errors and bugs as opportunities.
-* Contrubution from my fellow students on slack whenever I posed a query.
+* Contribution from my fellow students on slack whenever I posed a query.
 
 ### References
 
