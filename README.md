@@ -2,11 +2,13 @@
 
 # Data Visualisation Stream2 Project
 ### Introduction
-The faculty of Health dashboard contains interactive charts and graphs based on the data set from the University of Northampton Student Records (Enrolment). The faculty has access to the data which allows further exploring of the recruitment and enrolment dimensions to improve student quality numbers, expectations and experience.
+The faculty of Health dashboard contains interactive charts and graphs based on the data set from the University of Northampton Student Records (Enrolment). The faculty has access to the data which allows further exploring of the recruitment and enrolment dimensions to improve student quality numbers, expectations and experience. The Health_enrol stream 2 project followed the Code Institute structure for the LMS project.
 
 The downloaded data is converted into a CSV file. The file is then imported into a MongoDB as a csv file using this command:
 
-```mongoimport -d FOHealth -c projects --type csv --file C:\Users\User\Desktop\FOH\healthEnrolData.csv --headerline``` to create a database and a collection
+```mongoimport -d FOHealth -c projects --type csv --file C:\Users\User\Desktop\FOH\healthEnrolData.csv --headerline```
+
+to create a database and a collection
 
 ### Requirements
 * Use school of Health(University of Northampton) enrolment data for international and national student recruitment insight programme.
