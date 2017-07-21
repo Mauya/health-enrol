@@ -69,7 +69,7 @@ The main project components include:
 * Next add to the project folder the requirement.txt file ```pip freeze --local > requirement.txt``` This ensures all dependencies for the project are added
 * For version control heroku creates the git instance that is available in the settings of heroku dashboard
 * next is to init in git ```git init```
-* ```git remote add heroku [link](https://git.heroku.com/lit-cliffs-50689.git)```
+* ```git remote add heroku https://git.heroku.com/lit-cliffs-50689.git```
 * ```git commit```
 * ```git push heroku master```
 * next is to deploy the MongoDB
