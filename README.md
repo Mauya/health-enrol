@@ -11,7 +11,7 @@ The downloaded data is converted into a CSV file. The file is then imported into
 to create a database and a collection
 
 ### Requirements
-* Use school of Health(University of Northampton) enrolment data for international and national student recruitment insight programme.
+* Used school of Health(University of Northampton) enrolment data for international and national student recruitment insight programme.
 * Use Python Flask micro Framework which include standard folder static and templates.
 * Create a two page application, introduction and dashboard page
 * The data as a true reflection of data stored in the student records and downloaded and stored in MongoDB
