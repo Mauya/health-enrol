@@ -42,7 +42,7 @@ The main project components include:
 * keen.js - a dashboard template library. [keen.js](https://keen.io/).
 * bootstrap - used in conjunction with keen.js to layout the dashboard elements.
 * MongoDB - A No-SQL database which is a repository for the project data [mongoDB](https://www.mongodb.com/)
-* Intro.js - this is a library to create a step-by-step guide that assigns interactive pop-up tooltip on the graph with useful information to the user [Intro.js](https://www.http://introjs.com/).
+* Intro.js - This is a library to create a step-by-step guide that assigns interactive pop-up tooltip on the graph with useful information to the user [Intro.js](https://www.http://introjs.com/).
 
 ### Testing
 #### Examples of errors/bugs encountered and tools used:

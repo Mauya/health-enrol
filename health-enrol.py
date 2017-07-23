@@ -44,7 +44,7 @@ def dash():
 
 
 @app.route("/FOHealth/projects")
-def health_projects():
+def health_enrol():
     """
    A Flask view to serve the project data from
    MongoDB in JSON format.
