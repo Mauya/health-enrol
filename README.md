@@ -117,6 +117,6 @@ To browse the deployed app [click here](https://lit-cliffs-50689.herokuapp.com/)
 ### Acknowledgement
 * Yoni Lavi (Mentor) for providing easy to follow steps for debugging in the web inspector mostly. Also for encouraging me to look at errors and bugs as opportunities.
 * Contribution from my fellow students on slack whenever I posed a query.
-* The work on _https://github.com/abmist/Project_2_ encouraged to be extensive.
-* the Code Institute guide in Stream 2 "Creating a Dashboard" provided a neat guide to set up my new Dashboard _http://lms.codeinstitute.net/course-status/_.
+* The work on _https://github.com/abmist/Project_2_ encouraged me to be extensive.
+* The Code Institute guide in Stream 2 "Creating a Dashboard" provided a neat guide to set up my Health-Enrol Dashboard _http://lms.codeinstitute.net/course-status/_.
 
