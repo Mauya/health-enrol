@@ -22,11 +22,12 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
               <li><a href="{{ url_for('dash') }}">Dashboard</a></li>
-                <li><a class="btn btn-small btn-primary" href="javascript:void(0);"
+            </ul>
+
+            <ul class = "nav navbar-nav navbar-right">
+                <li><a class="btn" href="javascript:void(0);"
                        onclick="javascript:introJs().start();">Navigate
                     Dashboard</a></li>
-            </ul>
-            <ul class = "nav navbar-nav navbar-right">
                 <li><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a></li>
             </ul>
         </div>
